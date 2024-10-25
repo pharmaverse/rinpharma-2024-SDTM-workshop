@@ -2,8 +2,10 @@
 #
 # Label: R program to create CM Domain
 #
-# Input raw data: cm_raw
+# Input 
+# raw data: cm_raw
 # study_controlled_terminology : study_ct
+# dm domain : dm
 #
 
 library(sdtm.oak)
