@@ -1,15 +1,15 @@
 PATNUM,SITENM,INSTANCE,IT.CMYN,IT.CMTRT,IT.CMINDC,IT.CMDSTXT,IT.CMDOSU,IT.DOSUO,IT.CMDOSFRM,IT.DOSFRMO,IT.CMDOSFRQ,IT.DOSFRQO,IT.CMROUTE,IT.ROUTEO,IT.CMSTDAT,IT.CMONGO,IT.CMENDAT
-375,TEST SITE,Concomitant Medications,Yes,BABY ASPIRIN,,10,mg,,Tablet,,QD (Every Day),,PO (Oral),,17-Sep-20,1,
-375,TEST SITE,Concomitant Medications,Yes,CORTISPORIN,NAUSEA,50,Gram,,Pill,,,,PO (Oral),,15-Sep-20,1,
-376,TEST SITE,Concomitant Medications,Yes,ASPIRIN,ANEMIA,,,,,,,,,,17-Feb-21,0,17-Feb-21
-377,TEST SITE,Concomitant Medications,Yes,DIPHENHYDRAMINE HCL,NAUSEA,50,mg,,Capsule,,BID (Twice a Day),,PO (Oral),,4-Oct-20,1,
-377,TEST SITE,Concomitant Medications,Yes,PARCETEMOL,PYREXIA,,mg,,Capsule,,BID (Twice a Day),,PO (Oral),,20-Jan-20,0,20-Jan-20
-377,TEST SITE,Concomitant Medications,Yes,VOMIKIND,VOMITINGS,One,Tablet,,,,PRN (As Needed),,PO (Oral),,UN-UNK-19,0,UN-UNK-19
-377,TEST SITE,Concomitant Medications,No,,,,,,,,,,,,20-Sep-20,,
-378,TEST SITE,Concomitant Medications,Yes,AMITRYPTYLINE,COLD,12,g,,Inhalant,,QD (Every Day),,IA (Intra-arterial),,UN-UNK-21,0,UN-UNK-20
-378,TEST SITE,Concomitant Medications,Yes,BENADRYL,FEVER,100,mg,,Capsule,,BID (Twice a Day),,PO (Oral),,26-Jan-20,0,26-Jan-20
-378,TEST SITE,Concomitant Medications,Yes,DIPHENHYDRAMINE HYDROCHLORIDE,LEG PAIN,Two,,cap,Capsule,,QD (Every Day),,Unknown,,28-Jan-20,1,1-Feb-20
-378,TEST SITE,Concomitant Medications,Yes,TETRACYCLINE,FEVER,10,mg,,Capsule,,BID (Twice a Day),,DE (Transdermal),,12-Feb-20,0,18-Feb-20
-379,TEST SITE,Concomitant Medications,Yes,BENADRYL,COLD,12,IU,,Lotion,, ,,IJ (Intra-articular),,10-UNK-20,0,20-UNK-20
-379,TEST SITE,Concomitant Medications,Yes,SOMINEX,COLD,3,mL,,Liquid,,PRN (As Needed),,EP (Epidural),,15-Sep-20,1,
-379,TEST SITE,Concomitant Medications,Yes,ZQUILL,PAIN,5,%,,,aer,,Every 2 hours,,Ophthalmic Route of Administration,15-Sep-20,0,17-Feb-20
+375,TEST SITE,Concomitant Medications,Yes,BABY ASPIRIN,,10,mg,,Tablet,,QD (Every Day),,PO (Oral),,17-Sep-20,Yes,
+375,TEST SITE,Concomitant Medications,Yes,CORTISPORIN,NAUSEA,50,Gram,,Pill,,,,PO (Oral),,15-Sep-20,Yes,
+376,TEST SITE,Concomitant Medications,Yes,ASPIRIN,ANEMIA,,,,,,,,,,17-Feb-21,No,17-Feb-21
+377,TEST SITE,Concomitant Medications,Yes,DIPHENHYDRAMINE HCL,NAUSEA,50,mg,,Capsule,,BID (Twice a Day),,PO (Oral),,4-Oct-20,Yes,
+377,TEST SITE,Concomitant Medications,Yes,PARCETEMOL,PYREXIA,,mg,,Capsule,,BID (Twice a Day),,PO (Oral),,20-Jan-20,No,20-Jan-20
+377,TEST SITE,Concomitant Medications,Yes,VOMIKIND,VOMITINGS,One,Tablet,,,,PRN (As Needed),,PO (Oral),,UN-UNK-19,No,UN-UNK-19
+377,TEST SITE,Concomitant Medications,No,,,,,,,,,,,,20-Sep-20,Yes,
+378,TEST SITE,Concomitant Medications,Yes,AMITRYPTYLINE,COLD,12,g,,Inhalant,,QD (Every Day),,IA (Intra-arterial),,UN-UNK-21,No,UN-UNK-20
+378,TEST SITE,Concomitant Medications,Yes,BENADRYL,FEVER,100,mg,,Capsule,,BID (Twice a Day),,PO (Oral),,26-Jan-20,No,26-Jan-20
+378,TEST SITE,Concomitant Medications,Yes,DIPHENHYDRAMINE HYDROCHLORIDE,LEG PAIN,Two,,cap,Capsule,,QD (Every Day),,Unknown,,28-Jan-20,Yes,1-Feb-20
+378,TEST SITE,Concomitant Medications,Yes,TETRACYCLINE,FEVER,10,mg,,Capsule,,BID (Twice a Day),,DE (Transdermal),,12-Feb-20,No,18-Feb-20
+379,TEST SITE,Concomitant Medications,Yes,BENADRYL,COLD,12,IU,,Lotion,, ,,IJ (Intra-articular),,10-UNK-20,No,20-UNK-20
+379,TEST SITE,Concomitant Medications,Yes,SOMINEX,COLD,3,mL,,Liquid,,PRN (As Needed),,EP (Epidural),,15-Sep-20,Yes,
+379,TEST SITE,Concomitant Medications,Yes,ZQUILL,PAIN,5,%,,,aer,,Every 2 hours,,Ophthalmic Route of Administration,15-Sep-20,No,17-Feb-20
