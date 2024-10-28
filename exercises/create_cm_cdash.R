@@ -9,8 +9,9 @@
 #'    aCRF - ~/rinpharma-2024-SDTM-workshop/specs/cm_cdash/CM_cdash_acrf.pdf
 #'    
 #'    SDTM specification in the OAK foramt. Just for reference, not used in programs.
-#'        sdtm_spec <- read.csv("specs/cm_sdtm_oak_spec_cdash.csv")
-#'        View(sdtm_spec)
+#'    
+#'        cm_sdtm_spec <- read.csv("./specs/cm_cdash/cm_sdtm_oak_spec_cdash.csv")
+#'        View(cm_sdtm_spec)
 #'
 #' Input 
 #' raw data: cm_raw_data_cdash.csv
