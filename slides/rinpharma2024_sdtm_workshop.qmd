@@ -1,0 +1,345 @@
+---
+title: "R/Pharma SDTM Workshop"
+author: 
+  - Rammprasad Ganapathy (Roche/Genentench)
+date: 2024-10-29
+date-format: full
+format: 
+  revealjs:
+    theme: solarized
+    transition: convex
+    background-transition: fade
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+#| include: false
+library(glue)
+library(link)
+library(sdtm.oak)
+library(dplyr)
+
+link::auto(keep_pkg_prefix = FALSE,
+           keep_braces = FALSE)
+
+# Package hexes
+admiral_img <- "https://raw.githubusercontent.com/pharmaverse/sdtm.oak/master/man/figures/logo.svg"
+pharmaverse_img <- "https://raw.githubusercontent.com/pharmaverse/pharmaverse-pkg/master/man/figures/banner.png"
+dplyr_img <- "https://raw.githubusercontent.com/tidyverse/dplyr/master/man/figures/logo.png"
+
+# Set image sizes
+img_bullet_size <- 80
+img_right_size <- 150
+img_center_size <- 300
+```
+
+## Objectives
+
+::: incremental
+-   By the end of this workshop you will have:
+    -   Updated code for SDTM `cm` and `vs` using `sdtm.oak`.
+    -   Gained an understanding of how to use `sdtm.oak`.
+    -   Gained an understanding of how to use resources for building
+        SDTM in `R`.
+:::
+
+## Assumptions
+
+::: incremental
+-   Basic knowledge of CDISC Standards (SDTM Domains)
+-   Basic background in R and its packages
+-   Basic familiarity with RStudio IDE.
+-   `%>%` chaining functions together
+
+:::
+
+## Agenda
+
+::: incremental
+Time is in Eastern Standard Time.
+
+-   🕙12:05 - 12:15 Setup of Workspace
+
+-   🕙12:15 - 12:30 Introduction to `sdtm.oak`
+
+-   🕥12:30 - 13:05 `CM` domain programming
+
+-   🕚13:15 - 13:15 Break
+
+-   🕦13:15 - 14:00 `VS` domain programming
+
+:::
+
+# Setup of Workspace
+
+🕙12:05 - 12:15 Setup of Workspace
+
+## Who will help you achieve the workshop's objectives!
+
+> > -   `Rammprasad Ganapathy (Ram)` - `Presenter` 📣
+> > -   `Edgar Manukyan` - `Chat Support` 💻
+> > -   `Shiyu Chen` - `Chat Support` 💻
+
+## Setting up your Workspace to "code" {.smaller}
+
+::: incremental
+-   **Preferred**:
+    -   Sign up for a free [Posit Account](https://posit.cloud/)
+    -   Share Link for R/Pharma: SDTM Workshop
+        -   Everything loaded (data, packages, specs) and ready to go!
+-   **Quick and Dirty**
+    -   Grab files from
+        [Repo](https://github.com/pharmaverse/rinpharma-2024-SDTM-workshop)
+    -   Files are in `exercises`, `datasets` and `specs` folders
+-   **Advanced:**
+    -   Clone
+        [Repo](https://github.com/pharmaverse/rinpharma-2024-SDTM-workshop)
+        and set up yourself
+-   **Sit back and Relax**
+    -   🏖️🏖️🍷🍷
+:::
+
+# Introduction to `sdtm.oak`
+
+## About the package  {.smaller}
+::: incremental
+-   Sponsored by CDISC COSA, pharmaceutical companies, including Roche, Pfizer, GSK, Vertex, Atorus Research, Pattern Institute, Transition Technologies Science.
+-  Part of the pharmaverse Group of packages.
+-  Inspired by the Roche's {roak} package.
+-  Addresses a critical gap in the pharmaverse suite by enabling study programmers to create SDTM datasets in R, complementing the existing capabilities for ADaM, TLGs, eSubmission, etc.
+
+:::
+
+## Challenges in SDTM Programming {.smaller}
+
+::: incremental
+-   Although SDTM is simpler with less complex derivations compared to ADaM, it presents unique challenges. Unlike ADaM, which uses SDTM datasets as its source with a well-defined structure, SDTM relies on raw datasets as input.
+-  **Raw Data structure** - Different EDC systems produce data in different structures, different variable names, dataset names etc.
+-  **Varying Data Collection standards** - Although CDASH is available, the companies can still develop varying eCRFs using CDASH standards.
+
+:::
+
+## `sdtm.oak` v0.1.0 {.smaller}
+
+::: incremental
+
+-   v0.1.0 is avaiable on CRAN.
+-  **EDC agnostic** `sdtm.oak` is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors. 
+-   **Data standards agnostic** It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.
+-  Provides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem.
+
+:::
+
+# Algorithms
+
+## Key concepts
+
+::: incremental
+
+-  The SDTM mappings that transform the collected source data into the target SDTM data model are grouped into algorithms. 
+- These mapping algorithms form the backbone of {sdtm.oak}
+- Algorithms can be re-used across multiple SDTM domains.
+-  **Programming language agnostic** This concept does not rely on a specific programming language for implementation.
+- `sdtm.oak` has R functions to represent each algorithm
+
+:::
+
+## assign_no_ct {.smaller}
+
+| Algorithm or Function | Description of the Algorithm | Example SDTM mapping|
+|---------------------|------------------------------|----------------------|
+| `r link::to_call("sdtm.oak::assign_no_ct()")` | One-to-one mapping between the raw source and a target SDTM variable that has no controlled terminology restrictions. Just a simple assignment statement. | MH.MHTERM <br><br> AE.AETERM |
+
+## assign_ct {.smaller}
+
+| Algorithm or Function | Description of the Algorithm | Example SDTM mapping|
+|---------------------|------------------------------|----------------------|
+| `r link::to_call("sdtm.oak::assign_ct()")` | 	One-to-one mapping between the raw source and a target SDTM variable that is subject to controlled terminology restrictions. A simple assign statement and applying controlled terminology. This will be used only if the SDTM variable has an associated controlled terminology.| VS.VSPOS <br><br> VS.VSLAT |
+
+## assign_datetime {.smaller}
+
+| Algorithm or Function | Description of the Algorithm | Example SDTM mapping|
+|---------------------|------------------------------|----------------------|
+| `r link::to_call("sdtm.oak::assign_datetime()")` | 	One-to-one mapping between the raw source and a target that involves mapping a Date or time or datetime component. This mapping algorithm also takes care of handling unknown dates and converting them into. ISO8601 format.| MH.MHSTDTC <br><br> AE.AEENDTC |
+
+## hardcode_ct {.smaller}
+
+| Algorithm or Function | Description of the Algorithm | Example SDTM mapping|
+|---------------------|------------------------------|----------------------|
+| `r link::to_call("sdtm.oak::hardcode_ct()")` | 	Mapping a hardcoded value to a target SDTM variable that is subject to terminology restrictions. This will be used only if the SDTM variable has an associated controlled terminology.| MH.MHPRESP = ‘Y’ <br><br> VS.VSORRESU = ‘mmHg’ |
+
+## hardcode_no_ct {.smaller}
+
+| Algorithm or Function | Description of the Algorithm | Example SDTM mapping|
+|---------------------|------------------------------|----------------------|
+| `r link::to_call("sdtm.oak::hardcode_no_ct()")` | 	Mapping a hardcoded value to a target SDTM variable that has no terminology restrictions.| CM.CMTRT = ‘FLUIDS’ <br><br> VS.VSCAT = ‘VITAL SIGNS’ |
+
+## condition_add {.smaller}
+
+| Algorithm or Function | Description of the Algorithm | Example SDTM mapping|
+|---------------------|------------------------------|----------------------|
+| `r link::to_call("sdtm.oak::hardcode_no_ct()")` | 		Algorithm that is used to filter the source data and/or target domain based on a condition. The mapping will be applied only if the condition is met. This algorithm has to be used in conjunction with other algorithms, that is if the condition is met perform the mapping using algorithms like assign_ct, assign_no_ct, hardcode_ct, hardcode_no_ct, assign_datetime.| If MDPRIOR == 1 then CM.CMSTRTPT = ‘BEFORE’. <br><br>VS.VSMETHOD when VSTESTCD = ‘TEMP’ |
+
+<style>
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
+## Reusable Algorithms
+
+![](reusable_algorithms.jpg){.center}
+
+# sdtm.oak Programming  {.smaller}
+
+## Programming concepts  {.smaller}
+
+::: incremental
+
+-  Is very close to the key SDTM concepts.
+- Provide a straightforward way to do step-by-step SDTM programming in R, that is, mapping topic variable and its qualifiers.
+- Programming steps are generic across SDTM domain classes like Events, Interventions, Findings
+
+:::
+
+## SDTM Concept
+
+  ![sdtm concept](sdtm_concept.png){.center}
+
+## Programming steps  {.smaller}
+
+::: incremental
+
+- Read Raw datasets
+- Create id vars in the raw dataset
+- Read study controlled terminology
+- Map Topic Variable
+- Map Rest of the variables
+- Repeat Map topic and Map rest for every topic variable
+- Create SDTM derived variables
+- Add Lables and Attributes
+
+::: 
+
+# Workshop - Create CM domain
+
+## How we will "code" today
+
+::: incremental
+-   I will walk you through coding `cm` and `vs`
+    -   Discussion on each function and function arguments
+    -   Occasional Check-in Poll
+-   Important to move along quickly
+    -   Please post questions to chat
+    -   Full scripts are available in `exercises` folder
+:::
+
+## Review specs
+
+Review aCRF
+
+## Code Walkthrough
+
+Run the code and explain to the users
+
+## Recap
+Did we review the following in the code?
+
+- Function call for various Algoriths
+- assign datetime function
+- How does condition_add work?
+- SDTM derived variables
+
+## Quiz - 1
+
+What function should be used for mapping for CMROUTE
+
+> > -   
+> >
+> >     a)  sdtm.oak::assign_no_ct()
+> >
+> > -   
+> >
+> >     b)  sdtm.oak::assign_ct()
+
+> -   Correct answer:
+> -   **b) As CMROUTE has a codelist associated we need to use  sdtm.oak::assign_ct()**
+
+# Break - 10 mins
+
+# Workshop - Create VS domain
+
+## Recap
+Did we review the following in the code?
+
+- Mapping one topic variable and its qualifies at a time
+- Mapping qualifiers common to all topic variables
+- Usage of `oak_id_vars`
+
+## Quiz - 2
+
+When to use hardcode mapping algorithm?
+
+> > -   
+> >
+> >     a)  To assign a collected value on the eCRF
+> >
+> > -   
+> >
+> >     b)  To Hardcode a SDTM variable that has not directly collected on the eCRF.
+
+> -   Correct answer:
+> -   **b) To hardcode a value use hardcode algorithms. To assign a collected value use assign algorithms**
+
+# Release summary
+
+::: incremental
+- Users can create the majority of the SDTM domains. 
+- **Not Supported Domains**\
+      DM (Demographics)\
+      EX (Exposure)\
+      Trial Design Domains\
+      SV (Subject Visits)\
+      SE (Subject Elements)\
+      RELREC (Related Records)\
+      Associated Person domains\
+      creation of SUPP domain
+      EPOCH variable across all domains.
+
+:::
+
+## sdtm specifications
+
+- Quick preview of the sdtm specifications (draft stage)
+- Showcase the potential for automation.
+
+      
+## Roadmap
+We are planning to develop the below features in the subsequent releases.
+
+::: incremental
+
+- Functions required to derive reference date variables in the DM domain.\
+- Metadata driven automation based on the standardized SDTM specification.\
+- Functions required to program the EPOCH variable.\
+- Functions to derive standard units and results based on metadata.\
+- Functions required to create SUPP domains.\
+- Making the algorithms part of the standard CDISC eCRF portal enabling automation of CDISC standard eCRFs.
+
+:::
+
+## Get Involved
+Please try the package and provide us with your feedback, or get involved in the development of new features. We can be reached through any of the following means:
+
+Slack: https://oakgarden.slack.com \
+GitHub: https://github.com/pharmaverse/sdtm.oak\
+CDISC Wiki: https://wiki.cdisc.org/display/oakgarden
+
+## Thank you
+
