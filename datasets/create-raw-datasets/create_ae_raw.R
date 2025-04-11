@@ -41,6 +41,32 @@ ae_raw <- sdtm_ae |>
     AESOD, AEDTCOL, IT.AESTDAT, IT.AEENDAT
   )
 
+# Map code from Meddra dictionary
+# In this dataset, only the AELLTCD and AESOCCD can find a match
+meddra <- arrow::read_parquet("xxx") # please update the file path here
+
+for (col in names(meddra)) {
+  attributes(meddra[[col]]) <- NULL
+}
+
+term <- tolower(unique(ae_raw$IT.AETERM))
+
+sub_meddra <- meddra |>
+  filter(tolower(PT_NAME) %in% term) |>
+  rename(IT.AETERM = PT_NAME,
+         AELLT = LLT_NAME,
+         AESOC = SOC_NAME) |>
+  mutate(IT.AETERM = tools::toTitleCase(tolower(IT.AETERM))) |>
+  mutate(across(c("AELLT", "AESOC", "HLT_NAME", "HLGT_NAME"), toupper)) |>
+  select(IT.AETERM, AELLT, LLT_CODE, AESOC, SOC_CODE) |>
+  distinct()
+
+ae_raw <- ae_raw |>
+  dplyr::left_join(sub_meddra, by = c("IT.AETERM", "AELLT", "AESOC")) |>
+  mutate(AELLTCD = LLT_CODE,
+         AESOCCD = SOC_CODE) |>
+  select(-LLT_CODE, -SOC_CODE)
+
 for (col in names(ae_raw)) {
   attributes(ae_raw[[col]]) <- NULL
 }
