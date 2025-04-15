@@ -1,7 +1,7 @@
 codelist_code,term_code,term_value,collected_value,term_preferred_term,term_synonyms
-AEREL,AEREL,PROBABLE,Porbably Related,,
+AEREL,AEREL,PROBABLE,Probably Related,,
 AEREL,AEREL,REMOTE,Remote,,
-AEREL,AEREL,POSSIBLE,Possible,,
+AEREL,AEREL,POSSIBLE,Possibly Related,,
 AEREL,AEREL,NONE,Not Related,,
 C66768,C48275,FATAL,Fatal,,
 C66768,C49494,NOT RECOVERED/NOT RESOLVED,Not Recovered/not Resolved,Not Recovered,Not Resolved
