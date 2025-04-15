@@ -7,7 +7,9 @@ ae_raw <- sdtm_ae |>
     FOLDER = "AE",
     FOLDERL = "Adverse Events",
     IT.AETERM = tools::toTitleCase(tolower(AETERM)),
-    IT.AESEV = tools::toTitleCase(tolower(AESEV)),
+    IT.AESEV = ifelse(AESEV == "MILD", "Mild Adverse Event",
+                      ifelse(AESEV == "MODERATE", "Moderate Adverse Event",
+                             "SEVERE", "Severe Adverse Event")),
     IT.AESER = ifelse(AESER == "Y", "Yes", "No"),
     IT.AEACN = AEACN,
     IT.AEREL = tools::toTitleCase(tolower(AEREL)), #CT
@@ -34,7 +36,7 @@ ae_raw <- sdtm_ae |>
   ) |>
   dplyr::select(
     STUDY, PATNUM, FOLDER, FOLDERL, IT.AETERM, AEOUTCOME,
-    AELLT, AELLTCD, AEDECOD, AEHLT, AEHLTCD, AEHLGT, AEHLGTCD, AEBODSYS, AEBDSYCD, AESOC, AESOCCD,
+    AELLT, AELLTCD, AEDECOD, AEPTCD, AEHLT, AEHLTCD, AEHLGT, AEHLGTCD, AEBODSYS, AEBDSYCD, AESOC, AESOCCD,
     IT.AESEV, IT.AESER, IT.AEREL, IT.AEACN, IT.AEREL,
     AEOUTCOME, AESCAN, AESCNO, AEDIS,
     IT.AESDTH, IT.AESHOSP, IT.AESLIFE,
@@ -70,3 +72,5 @@ ae_raw <- ae_raw |>
 for (col in names(ae_raw)) {
   attributes(ae_raw[[col]]) <- NULL
 }
+
+write.csv(ae_raw, file = "~/rinpharma-2024-SDTM-workshop/datasets/ae_raw_data.csv", row.names = FALSE)
