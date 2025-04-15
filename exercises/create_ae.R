@@ -40,7 +40,8 @@ ae <-
   assign_no_ct(
     raw_dat = ae_raw,
     raw_var = "IT.AETERM",
-    tgt_var = "AETERM"
+    tgt_var = "AETERM",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AEOUT using assign_ct, raw_var=AEOUTCOME, tgt_var=AEOUT
   assign_ct(
@@ -48,7 +49,8 @@ ae <-
     raw_var = "AEOUTCOME",
     tgt_var = "AEOUT",
     ct_spec = study_ct,
-    ct_clst = "C66768"
+    ct_clst = "C66768",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AESEV using assign_no_ct, raw_var=IT.AESEV, tgt_var=AESEV
   assign_ct(
@@ -56,7 +58,8 @@ ae <-
     raw_var = "IT.AESEV",
     tgt_var = "AESEV",
     ct_spec = study_ct,
-    ct_clst = "C66769"
+    ct_clst = "C66769",
+    id_vars = oak_id_vars()
   )  %>%
   # Map AESER using assign_no_ct, raw_var=IT.AESER, tgt_var=AESER
   assign_ct(
@@ -64,13 +67,15 @@ ae <-
     raw_var = "IT.AESER",
     tgt_var = "AESER",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AEACN using assign_no_ct, raw_var=IT.AEACN, tgt_var=AEACN
   assign_no_ct(
     raw_dat = ae_raw,
     raw_var = "IT.AEACN",
-    tgt_var = "AEACN"
+    tgt_var = "AEACN",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AEREL using assign_ct, raw_var=IT.AEREL, tgt_var=AEREL
   # User-added codelist is in the ct,
@@ -79,7 +84,8 @@ ae <-
     raw_var = "IT.AEREL",
     tgt_var = "AEREL",
     ct_spec = study_ct,
-    ct_clst = "AEREL"
+    ct_clst = "AEREL",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AESCAN using assign_ct, raw_var=AESCAN, tgt_var=AESCAN
   assign_ct(
@@ -87,7 +93,8 @@ ae <-
     raw_var = "AESCAN",
     tgt_var = "AESCAN",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AESCNO using assign_ct, raw_var=AESCNO, tgt_var=AESCNO
   assign_ct(
@@ -95,7 +102,8 @@ ae <-
     raw_var = "AESCNO",
     tgt_var = "AESCONG",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AEDIS using assign_ct, raw_var=AEDIS, tgt_var=AEDIS
   assign_ct(
@@ -103,7 +111,8 @@ ae <-
     raw_var = "AEDIS",
     tgt_var = "AESDISAB",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AESDTH using assign_ct, raw_var=IT.AESDTH, tgt_var=AESDTH
   assign_ct(
@@ -111,7 +120,8 @@ ae <-
     raw_var = "IT.AESDTH",
     tgt_var = "AESDTH",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AESHOSP using assign_ct, raw_var=IT.AESHOSP, tgt_var=AESHOSP
   assign_ct(
@@ -119,7 +129,8 @@ ae <-
     raw_var = "IT.AESHOSP",
     tgt_var = "AESHOSP",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AESLIFE using assign_ct, raw_var=IT.AESLIFE, tgt_var=AESLIFE
   assign_ct(
@@ -127,7 +138,8 @@ ae <-
     raw_var = "IT.AESLIFE",
     tgt_var = "AESLIFE",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AESOD using assign_ct, raw_var=AESOD, tgt_var=AESOD
   assign_ct(
@@ -135,7 +147,8 @@ ae <-
     raw_var = "AESOD",
     tgt_var = "AESOD",
     ct_spec = study_ct,
-    ct_clst = "C66742"
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
   ) %>%
   # Map AEDTC using assign_datetime, raw_var=AEDTCOL
   assign_datetime(
@@ -149,14 +162,16 @@ ae <-
     raw_dat = ae_raw,
     raw_var = "IT.AESTDAT",
     tgt_var = "AESTDTC",
-    raw_fmt = c("m/d/y")
+    raw_fmt = c("m/d/y"),
+    id_vars = oak_id_vars()
   ) %>%
   # Map AEENDTC using assign_datetime, raw_var=IT.AEENDAT
   assign_datetime(
     raw_dat = ae_raw,
     raw_var = "IT.AEENDAT",
     tgt_var = "AEENDTC",
-    raw_fmt = c("m/d/y")
+    raw_fmt = c("m/d/y"),
+    id_vars = oak_id_vars()
   ) %>%
   dplyr::mutate(
     STUDYID = ae_raw$STUDY,
