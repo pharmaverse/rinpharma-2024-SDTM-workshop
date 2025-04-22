@@ -10,9 +10,9 @@ ec_raw <- sdtm_ex |>
     FOLDERL = "Exposure as Collected",
     IT.ECREFID = "123",
     DRUGAD = EXTRT,
-    IT.ECSTDAT = format(as.Date(EXSTDTC, format = "%Y-%m-%d"), "%m/%d/%Y"),
+    IT.ECSTDAT = format(as.Date(EXSTDTC, format = "%Y-%m-%d"), "%d-%b-%Y"),
     IT.ECENDAT = ifelse(is.na(EXENDTC), NA_character_, 
-                              format(as.Date(EXENDTC, format = "%Y-%m-%d"), "%m/%d/%Y")),
+                              format(as.Date(EXENDTC, format = "%Y-%m-%d"), "%d-%b-%Y")),
     IT.ECDSTXT = EXDOSE,
     IT.ECDOSU = tolower(EXDOSU), #CT
     DOSFM = tolower(EXDOSFRM), #CT
@@ -23,4 +23,9 @@ ec_raw <- sdtm_ex |>
     STUDY, PATNUM, VISITNAME, FOLDER, FOLDERL, IT.ECREFID, DRUGAD,
     IT.ECSTDAT, IT.ECENDAT, IT.ECDSTXT, IT.ECDOSU, DOSFM, DOSFRQ, IT.ECROUTE
   )
-  
+
+for (col in names(ec_raw)) {
+  attributes(ec_raw[[col]]) <- NULL
+}
+
+write.csv(ec_raw, file = "~/rinpharma-2024-SDTM-workshop/datasets/exposure_raw_data.csv", row.names = FALSE)

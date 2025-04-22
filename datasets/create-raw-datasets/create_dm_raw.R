@@ -15,7 +15,8 @@ dm_raw <- sdtm_dm |>
     ACTUAL_ARM = ifelse(ACTARM == "Xanomeline High Dose", "Xan High", 
                         ifelse(ACTARM == "Xanomeline Low Dose", "Xan Low", ACTARM)), #Customized CT
     ACTUAL_ARMCD = ACTARMCD,
-    COL_DT = format(as.Date(DMDTC, format = "%Y-%m-%d"), "%m/%d/%Y")
+    COL_DT = format(as.Date(DMDTC, format = "%Y-%m-%d"), "%m/%d/%Y"),
+    IC_DT = RFICDTC
   ) |>
   dplyr::select(
     STUDY, PATNUM, IT.AGE, IT.ETHNIC, IT.RACE, COUNTRY, 
