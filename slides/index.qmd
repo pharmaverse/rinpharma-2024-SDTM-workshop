@@ -1,16 +1,16 @@
 ---
 title: "R/Pharma SDTM Workshop"
-author: 
+author:
   - Rammprasad Ganapathy (Roche/Genentench)
-date: 2024-10-29
+date: 2025-04-28
 date-format: full
-format: 
+format:
   revealjs:
     theme: solarized
     transition: convex
     background-transition: fade
-editor: 
-  markdown: 
+editor:
+  markdown:
     wrap: 72
 ---
 
@@ -126,7 +126,7 @@ Time is in Eastern Standard Time.
 ::: incremental
 
 -   v0.1.0 is avaiable on CRAN.
--  **EDC agnostic** `sdtm.oak` is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors. 
+-  **EDC agnostic** `sdtm.oak` is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors.
 -   **Data standards agnostic** It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.
 -  Provides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem.
 
@@ -138,7 +138,7 @@ Time is in Eastern Standard Time.
 
 ::: incremental
 
--  The SDTM mappings that transform the collected source data into the target SDTM data model are grouped into algorithms. 
+-  The SDTM mappings that transform the collected source data into the target SDTM data model are grouped into algorithms.
 - These mapping algorithms form the backbone of {sdtm.oak}
 - Algorithms can be re-used across multiple SDTM domains.
 -  **Programming language agnostic** This concept does not rely on a specific programming language for implementation.
@@ -225,7 +225,7 @@ Time is in Eastern Standard Time.
 - Create SDTM derived variables
 - Add Lables and Attributes
 
-::: 
+:::
 
 # Workshop - Create CM domain
 
@@ -260,11 +260,11 @@ Did we review the following in the code?
 
 What function should be used for mapping for CMROUTE
 
-> > -   
+> > -
 > >
 > >     a)  sdtm.oak::assign_no_ct()
 > >
-> > -   
+> > -
 > >
 > >     b)  sdtm.oak::assign_ct()
 
@@ -286,11 +286,11 @@ Did we review the following in the code?
 
 When to use hardcode mapping algorithm?
 
-> > -   
+> > -
 > >
 > >     a)  To assign a collected value on the eCRF
 > >
-> > -   
+> > -
 > >
 > >     b)  To Hardcode a SDTM variable that has not directly collected on the eCRF.
 
@@ -300,7 +300,7 @@ When to use hardcode mapping algorithm?
 # Release summary
 
 ::: incremental
-- Users can create the majority of the SDTM domains. 
+- Users can create the majority of the SDTM domains.
 - **Not Supported Domains**\
       DM (Demographics)\
       EX (Exposure)\
@@ -319,7 +319,7 @@ When to use hardcode mapping algorithm?
 - Quick preview of the sdtm specifications (draft stage)
 - Showcase the potential for automation.
 
-      
+
 ## Roadmap
 We are planning to develop the below features in the subsequent releases.
 
