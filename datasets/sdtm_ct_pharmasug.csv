@@ -11,3 +11,42 @@ C66742,C49488,Y,Yes,,
 C66769,C41338,MILD,Mild Adverse Event,Mild Adverse Event,1; Grade 1
 C66769,C41339,MODERATE,Moderate Adverse Event,Moderate Adverse Event,2; Grade 2
 C66769,C41340,SEVERE,Severe Adverse Event,Severe Adverse Event,3; Grade 3
+C71620,C28253,mg,Milligram,milligram,
+C71113,C25473,QD,Daily,/day,Per Day
+C66729,C38305,TRANSDERMAL,TRANSDERMAL,Transdermal,Transdermal Route of Administration
+C66726,C42968,PATCH,Patch,patch,Patch Dosage Form
+C66727,C41331,ADVERSE EVENT,Adverse Event,AE,ADVERSE EVENT
+C66727,C25250,COMPLETED,Complete,Completed,COMPLETE
+C66727,C28554,DEATH,Dead,Died,Death
+C66727,C48226,LACK OF EFFICACY,Lack of Efficacy,,
+C66727,C48227,LOST TO FOLLOW-UP,Lost To Follow-Up,,
+C66727,C48250,PHYSICIAN DECISION,Physician Decision,,
+C66727,C142185,PROTOCOL VIOLATION,Protocol Violation,Violation,
+C66727,C49628,SCREEN FAILURE,Trial Screen Failure,Failure to Meet Inclusion/Exclusion Criteria,
+C66727,C49632,STUDY TERMINATED BY SPONSOR,Study Terminated By Sponsor,,
+C66727,C49634,WITHDRAWAL BY SUBJECT,Withdrawal by Subject,Dropout,Discontinued Participation
+C74558,C74590,DISPOSITION EVENT,Disposition Event,Protocol Disposition Event,
+C74558,C150824,OTHER EVENT,Other Event,Non-Protocol Disposition Event,
+C74558,C74588,PROTOCOL MILESTONE,Protocol Milestone,Protocol Milestone,
+VISIT,VISIT,SCREENING 1,Screening  1,screening1,Screening1
+VISIT,VISIT,SCREENING 2,Screening  2,screening2,Screening2
+VISIT,VISIT,BASELINE,baseline,Baseline,
+VISIT,VISIT,WEEK 2,Week 2,WEEK 2,Week2
+VISIT,VISIT,WEEK 4,Week 4,WEEK 4,Week4
+VISIT,VISIT,WEEK 6,Week 6,WEEK 6,Week6
+VISIT,VISIT,WEEK 8,Week 8,WEEK 8,Week8
+VISIT,VISIT,WEEK 12,Week 12,WEEK 12,Week12
+VISIT,VISIT,WEEK 24,Week 24,WEEK 24,Week24
+VISIT,VISIT,WEEK 26,Week 26,WEEK 26,Week26
+VISIT,VISIT,RETRIEVAL,Retrieval,retrieval,
+VISITNUM,VISITNUM,1,Screening  1,screening1,Screening1
+VISITNUM,VISITNUM,2,Screening  2,screening2,Screening2
+VISITNUM,VISITNUM,3,Baseline,baseline,BASELINE
+VISITNUM,VISITNUM,4,Week 2,WEEK 2,Week2
+VISITNUM,VISITNUM,5,Week 4,WEEK 4,Week4
+VISITNUM,VISITNUM,7,Week 6,WEEK 6,Week6
+VISITNUM,VISITNUM,8,Week 8,WEEK 8,Week8
+VISITNUM,VISITNUM,9,Week 12,WEEK 12,Week12
+VISITNUM,VISITNUM,10,Week 24,WEEK 24,Week24
+VISITNUM,VISITNUM,11,Week 26,WEEK 26,Week26
+VISITNUM,VISITNUM,201,Retrieval,RETRIEVAL,

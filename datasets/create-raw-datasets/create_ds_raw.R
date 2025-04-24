@@ -9,8 +9,10 @@ ds_raw <- pharmaversesdtm::ds |>
     FORM = "DISC1",
     FORML = "Subject Disposition",
     IT.DSTERM = tools::toTitleCase(tolower(DSTERM)),
+    OTHERSP = ifelse(DSCAT == "OTHER EVENT", IT.DSTERM, NA_character_),
+    IT.DSTERM = ifelse(DSCAT == "OTHER EVENT", NA_character_, IT.DSTERM),
     IT.DSDECOD = tools::toTitleCase(tolower(DSDECOD)), #CT
-    OTHERSP = NA_character_,
+    IT.DSDECOD = ifelse(DSCAT == "OTHER EVENT", NA_character_, IT.DSDECOD),
     DSDTCOL = ifelse(nchar(DSDTC) == 10, format(as.Date(DSDTC, format = "%Y-%m-%d"), "%m-%d-%Y"),
                      format(as.Date(DSDTC, format = "%Y-%m-%dT%H:%M"), "%m-%d-%Y")),
     DSTMCOL = ifelse(nchar(DSDTC) == 10, NA_character_, substr(DSDTC, 12, 16)),
@@ -18,7 +20,7 @@ ds_raw <- pharmaversesdtm::ds |>
   ) |>
   dplyr::select(
     STUDY, PATNUM, SITENM, INSTANCE, FORM, FORML,
-    IT.DSTERM, IT.DSDECOD, DSDTCOL, DSTMCOL, IT.DSSTDAT
+    IT.DSTERM, IT.DSDECOD, OTHERSP, DSDTCOL, DSTMCOL, IT.DSSTDAT
   )
 
 for (col in names(ds_raw)) {

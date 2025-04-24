@@ -14,7 +14,7 @@ ec_raw <- sdtm_ex |>
     IT.ECENDAT = ifelse(is.na(EXENDTC), NA_character_, 
                               format(as.Date(EXENDTC, format = "%Y-%m-%d"), "%d-%b-%Y")),
     IT.ECDSTXT = EXDOSE,
-    IT.ECDOSU = tolower(EXDOSU), #CT
+    IT.ECDOSU = "Milligram", #CT
     DOSFM = tolower(EXDOSFRM), #CT
     DOSFRQ = "Daily", #CT
     IT.ECROUTE = tools::toTitleCase(tolower(EXROUTE)) #CT

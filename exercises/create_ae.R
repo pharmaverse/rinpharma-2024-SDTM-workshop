@@ -13,7 +13,7 @@ library(pharmaversesdtm)
 
 
 # Read CT Specification
-study_ct <- read.csv("datasets/sdtm_ct_pharmasug.csv")
+study_ct <- read.csv("./datasets/sdtm_ct_pharmasug.csv")
 
 # Read in raw data
 ae_raw <- read.csv("./datasets/ae_raw_data.csv", 
