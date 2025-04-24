@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "index.html#objectives",
+    "href": "index.html#objectives",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Objectives",
+    "text": "Objectives\n\n\nBy the end of this workshop you will have:\n\nUpdated code for SDTM cm and vs using sdtm.oak.\nGained an understanding of how to use sdtm.oak.\nGained an understanding of how to use resources for building SDTM in R."
+  },
+  {
+    "objectID": "index.html#assumptions",
+    "href": "index.html#assumptions",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Assumptions",
+    "text": "Assumptions\n\n\nBasic knowledge of CDISC Standards (SDTM Domains)\nBasic background in R and its packages\nBasic familiarity with RStudio IDE.\n%&gt;% chaining functions together"
+  },
+  {
+    "objectID": "index.html#agenda",
+    "href": "index.html#agenda",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Agenda",
+    "text": "Agenda\n\nTime is in Eastern Standard Time.\n\n🕙12:05 - 12:15 Setup of Workspace\n🕙12:15 - 12:30 Introduction to sdtm.oak\n🕥12:30 - 13:05 CM domain programming\n🕚13:15 - 13:15 Break\n🕦13:15 - 14:00 VS domain programming"
+  },
+  {
+    "objectID": "index.html#who-will-help-you-achieve-the-workshops-objectives",
+    "href": "index.html#who-will-help-you-achieve-the-workshops-objectives",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Who will help you achieve the workshop’s objectives!",
+    "text": "Who will help you achieve the workshop’s objectives!\n\n\nRammprasad Ganapathy (Ram) - Presenter 📣\nEdgar Manukyan - Chat Support 💻\nShiyu Chen - Chat Support 💻"
+  },
+  {
+    "objectID": "index.html#setting-up-your-workspace-to-code",
+    "href": "index.html#setting-up-your-workspace-to-code",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Setting up your Workspace to “code”",
+    "text": "Setting up your Workspace to “code”\n\n\nPreferred:\n\nSign up for a free Posit Account\nShare Link for R/Pharma: SDTM Workshop\n\nEverything loaded (data, packages, specs) and ready to go!\n\n\nQuick and Dirty\n\nGrab files from Repo\nFiles are in exercises, datasets and specs folders\n\nAdvanced:\n\nClone Repo and set up yourself\n\nSit back and Relax\n\n🏖️🏖️🍷🍷"
+  },
+  {
+    "objectID": "index.html#about-the-package",
+    "href": "index.html#about-the-package",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "About the package",
+    "text": "About the package\n\n\nSponsored by CDISC COSA, pharmaceutical companies, including Roche, Pfizer, GSK, Vertex, Atorus Research, Pattern Institute, Transition Technologies Science.\nPart of the pharmaverse Group of packages.\nInspired by the Roche’s roak package.\nAddresses a critical gap in the pharmaverse suite by enabling study programmers to create SDTM datasets in R, complementing the existing capabilities for ADaM, TLGs, eSubmission, etc."
+  },
+  {
+    "objectID": "index.html#challenges-in-sdtm-programming",
+    "href": "index.html#challenges-in-sdtm-programming",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Challenges in SDTM Programming",
+    "text": "Challenges in SDTM Programming\n\n\nAlthough SDTM is simpler with less complex derivations compared to ADaM, it presents unique challenges. Unlike ADaM, which uses SDTM datasets as its source with a well-defined structure, SDTM relies on raw datasets as input.\nRaw Data structure - Different EDC systems produce data in different structures, different variable names, dataset names etc.\nVarying Data Collection standards - Although CDASH is available, the companies can still develop varying eCRFs using CDASH standards."
+  },
+  {
+    "objectID": "index.html#sdtm.oak-v0.1.0",
+    "href": "index.html#sdtm.oak-v0.1.0",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "sdtm.oak v0.1.0",
+    "text": "sdtm.oak v0.1.0\n\n\nv0.1.0 is avaiable on CRAN.\nEDC agnostic sdtm.oak is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors.\nData standards agnostic It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.\nProvides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem."
+  },
+  {
+    "objectID": "index.html#key-concepts",
+    "href": "index.html#key-concepts",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Key concepts",
+    "text": "Key concepts\n\n\nThe SDTM mappings that transform the collected source data into the target SDTM data model are grouped into algorithms.\nThese mapping algorithms form the backbone of   sdtm.oak \nAlgorithms can be re-used across multiple SDTM domains.\nProgramming language agnostic This concept does not rely on a specific programming language for implementation.\nsdtm.oak has R functions to represent each algorithm"
+  },
+  {
+    "objectID": "index.html#assign_no_ct",
+    "href": "index.html#assign_no_ct",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "assign_no_ct",
+    "text": "assign_no_ct\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        assign_no_ct()  \nOne-to-one mapping between the raw source and a target SDTM variable that has no controlled terminology restrictions. Just a simple assignment statement.\nMH.MHTERM  AE.AETERM"
+  },
+  {
+    "objectID": "index.html#assign_ct",
+    "href": "index.html#assign_ct",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "assign_ct",
+    "text": "assign_ct\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        assign_ct()  \nOne-to-one mapping between the raw source and a target SDTM variable that is subject to controlled terminology restrictions. A simple assign statement and applying controlled terminology. This will be used only if the SDTM variable has an associated controlled terminology.\nVS.VSPOS  VS.VSLAT"
+  },
+  {
+    "objectID": "index.html#assign_datetime",
+    "href": "index.html#assign_datetime",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "assign_datetime",
+    "text": "assign_datetime\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        assign_datetime()  \nOne-to-one mapping between the raw source and a target that involves mapping a Date or time or datetime component. This mapping algorithm also takes care of handling unknown dates and converting them into. ISO8601 format.\nMH.MHSTDTC  AE.AEENDTC"
+  },
+  {
+    "objectID": "index.html#hardcode_ct",
+    "href": "index.html#hardcode_ct",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "hardcode_ct",
+    "text": "hardcode_ct\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        hardcode_ct()  \nMapping a hardcoded value to a target SDTM variable that is subject to terminology restrictions. This will be used only if the SDTM variable has an associated controlled terminology.\nMH.MHPRESP = ‘Y’  VS.VSORRESU = ‘mmHg’"
+  },
+  {
+    "objectID": "index.html#hardcode_no_ct",
+    "href": "index.html#hardcode_no_ct",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "hardcode_no_ct",
+    "text": "hardcode_no_ct\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        hardcode_no_ct()  \nMapping a hardcoded value to a target SDTM variable that has no terminology restrictions.\nCM.CMTRT = ‘FLUIDS’  VS.VSCAT = ‘VITAL SIGNS’"
+  },
+  {
+    "objectID": "index.html#condition_add",
+    "href": "index.html#condition_add",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "condition_add",
+    "text": "condition_add\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        condition_add()  \nAlgorithm that is used to filter the source data and/or target domain based on a condition. The mapping will be applied only if the condition is met. This algorithm has to be used in conjunction with other algorithms, that is if the condition is met perform the mapping using algorithms like assign_ct, assign_no_ct, hardcode_ct, hardcode_no_ct, assign_datetime.\nIf MDPRIOR == 1 then CM.CMSTRTPT = ‘BEFORE’. VS.VSMETHOD when VSTESTCD = ‘TEMP’"
+  },
+  {
+    "objectID": "index.html#reusable-algorithms",
+    "href": "index.html#reusable-algorithms",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Reusable Algorithms",
+    "text": "Reusable Algorithms"
+  },
+  {
+    "objectID": "index.html#programming-concepts",
+    "href": "index.html#programming-concepts",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Programming concepts",
+    "text": "Programming concepts\n\n\nIs very close to the key SDTM concepts.\nProvide a straightforward way to do step-by-step SDTM programming in R, that is, mapping topic variable and its qualifiers.\nProgramming steps are generic across SDTM domain classes like Events, Interventions, Findings"
+  },
+  {
+    "objectID": "index.html#sdtm-concept",
+    "href": "index.html#sdtm-concept",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "SDTM Concept",
+    "text": "SDTM Concept\n\nsdtm concept"
+  },
+  {
+    "objectID": "index.html#programming-steps",
+    "href": "index.html#programming-steps",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Programming steps",
+    "text": "Programming steps\n\n\nRead Raw datasets\nCreate id vars in the raw dataset\nRead study controlled terminology\nMap Topic Variable\nMap Rest of the variables\nRepeat Map topic and Map rest for every topic variable\nCreate SDTM derived variables\nAdd Lables and Attributes"
+  },
+  {
+    "objectID": "index.html#how-we-will-code-today",
+    "href": "index.html#how-we-will-code-today",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "How we will “code” today",
+    "text": "How we will “code” today\n\n\nI will walk you through coding cm and vs\n\nDiscussion on each function and function arguments\nOccasional Check-in Poll\n\nImportant to move along quickly\n\nPlease post questions to chat\nFull scripts are available in exercises folder"
+  },
+  {
+    "objectID": "index.html#review-specs",
+    "href": "index.html#review-specs",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Review specs",
+    "text": "Review specs\nReview aCRF"
+  },
+  {
+    "objectID": "index.html#code-walkthrough",
+    "href": "index.html#code-walkthrough",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Code Walkthrough",
+    "text": "Code Walkthrough\nRun the code and explain to the users"
+  },
+  {
+    "objectID": "index.html#recap",
+    "href": "index.html#recap",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Recap",
+    "text": "Recap\nDid we review the following in the code?\n\nFunction call for various Algoriths\nassign datetime function\nHow does condition_add work?\nSDTM derived variables"
+  },
+  {
+    "objectID": "index.html#quiz---1",
+    "href": "index.html#quiz---1",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Quiz - 1",
+    "text": "Quiz - 1\nWhat function should be used for mapping for CMROUTE\n\n\n\n  assign_no_ct() \n\n\n  assign_ct() \n\n\n\n\nCorrect answer:\nb) As CMROUTE has a codelist associated we need to use   assign_ct()"
+  },
+  {
+    "objectID": "index.html#recap-1",
+    "href": "index.html#recap-1",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Recap",
+    "text": "Recap\nDid we review the following in the code?\n\nMapping one topic variable and its qualifies at a time\nMapping qualifiers common to all topic variables\nUsage of oak_id_vars"
+  },
+  {
+    "objectID": "index.html#quiz---2",
+    "href": "index.html#quiz---2",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Quiz - 2",
+    "text": "Quiz - 2\nWhen to use hardcode mapping algorithm?\n\n\n\nTo assign a collected value on the eCRF\n\n\nTo Hardcode a SDTM variable that has not directly collected on the eCRF.\n\n\n\n\nCorrect answer:\nb) To hardcode a value use hardcode algorithms. To assign a collected value use assign algorithms"
+  },
+  {
+    "objectID": "index.html#sdtm-specifications",
+    "href": "index.html#sdtm-specifications",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "sdtm specifications",
+    "text": "sdtm specifications\n\nQuick preview of the sdtm specifications (draft stage)\nShowcase the potential for automation."
+  },
+  {
+    "objectID": "index.html#roadmap",
+    "href": "index.html#roadmap",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Roadmap",
+    "text": "Roadmap\nWe are planning to develop the below features in the subsequent releases.\n\n\nFunctions required to derive reference date variables in the DM domain.\n\nMetadata driven automation based on the standardized SDTM specification.\n\nFunctions required to program the EPOCH variable.\n\nFunctions to derive standard units and results based on metadata.\n\nFunctions required to create SUPP domains.\n\nMaking the algorithms part of the standard CDISC eCRF portal enabling automation of CDISC standard eCRFs."
+  },
+  {
+    "objectID": "index.html#get-involved",
+    "href": "index.html#get-involved",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Get Involved",
+    "text": "Get Involved\nPlease try the package and provide us with your feedback, or get involved in the development of new features. We can be reached through any of the following means:\nSlack: https://oakgarden.slack.com\nGitHub: https://github.com/pharmaverse/sdtm.oak\nCDISC Wiki: https://wiki.cdisc.org/display/oakgarden"
+  },
+  {
+    "objectID": "index.html#thank-you",
+    "href": "index.html#thank-you",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Thank you",
+    "text": "Thank you"
+  }
+]
