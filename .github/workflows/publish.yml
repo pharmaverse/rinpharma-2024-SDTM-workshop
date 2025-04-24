@@ -1,0 +1,45 @@
+name: Publish Quarto Docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+     - main
+    paths:
+      - 'slides/**'
+
+jobs:
+  publish:
+    name: Build & Deploy Quarto Projects
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:4.5.0
+    permissions:
+      contents: write
+    strategy:
+      max-parallel: 1
+      matrix:
+        QUARTO_DIR:
+          - slides
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install tinytex
+        run: quarto install tinytex
+        shell: bash
+
+      - name: Install R dependencies
+        run: install.packages(c("link", "glue", "dplyr", "sdtm.oak"))
+        shell: Rscript {0}
+
+      - name: Render Quarto Project
+        run: quarto render --output-dir _site
+        working-directory: ${{ matrix.QUARTO_DIR }}
+        shell: bash
+
+      - name: Publish ${{ matrix.QUARTO_DIR }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./${{ matrix.QUARTO_DIR }}/_site
