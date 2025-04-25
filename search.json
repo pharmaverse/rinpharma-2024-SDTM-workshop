@@ -18,7 +18,7 @@
     "href": "index.html#agenda",
     "title": "R/Pharma SDTM Workshop",
     "section": "Agenda",
-    "text": "Agenda\n\nTime is in Eastern Standard Time.\n\n🕙12:05 - 12:15 Setup of Workspace\n🕙12:15 - 12:30 Introduction to sdtm.oak\n🕥12:30 - 13:05 CM domain programming\n🕚13:15 - 13:15 Break\n🕦13:15 - 14:00 VS domain programming"
+    "text": "Agenda\n\n\n🕙 15 minutes Setup of Workspace\n🕙 15 minutes Introduction to sdtm.oak\n🕥 40 minutes CM domain programming\n🕚 10 minutes Break\n🕦 40 minutes VS domain programming"
   },
   {
     "objectID": "index.html#who-will-help-you-achieve-the-workshops-objectives",
@@ -49,11 +49,11 @@
     "text": "Challenges in SDTM Programming\n\n\nAlthough SDTM is simpler with less complex derivations compared to ADaM, it presents unique challenges. Unlike ADaM, which uses SDTM datasets as its source with a well-defined structure, SDTM relies on raw datasets as input.\nRaw Data structure - Different EDC systems produce data in different structures, different variable names, dataset names etc.\nVarying Data Collection standards - Although CDASH is available, the companies can still develop varying eCRFs using CDASH standards."
   },
   {
-    "objectID": "index.html#sdtm.oak-v0.1.0",
-    "href": "index.html#sdtm.oak-v0.1.0",
+    "objectID": "index.html#sdtm.oak-v0.1.1",
+    "href": "index.html#sdtm.oak-v0.1.1",
     "title": "R/Pharma SDTM Workshop",
-    "section": "sdtm.oak v0.1.0",
-    "text": "sdtm.oak v0.1.0\n\n\nv0.1.0 is avaiable on CRAN.\nEDC agnostic sdtm.oak is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors.\nData standards agnostic It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.\nProvides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem."
+    "section": "sdtm.oak v0.1.1",
+    "text": "sdtm.oak v0.1.1\n\n\nv0.1.1 is avaiable on CRAN.\nEDC agnostic sdtm.oak is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors.\nData standards agnostic It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.\nProvides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem."
   },
   {
     "objectID": "index.html#key-concepts",
@@ -133,6 +133,13 @@
     "text": "Programming steps\n\n\nRead Raw datasets\nCreate id vars in the raw dataset\nRead study controlled terminology\nMap Topic Variable\nMap Rest of the variables\nRepeat Map topic and Map rest for every topic variable\nCreate SDTM derived variables\nAdd Lables and Attributes"
   },
   {
+    "objectID": "index.html#oak-id-vars",
+    "href": "index.html#oak-id-vars",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "oak id vars",
+    "text": "oak id vars\n\n\nRaw data can be in long format, where each piece of collected data is represented as a column.\nIn SDTM mappings, transposing may be necessary to create multiple records from a single row in a raw dataset (e.g., HEIGHT and WEIGHT in the VS domain).\nAlternatively, a single row in an SDTM domain can be created from one row of the raw dataset (e.g., AETERM from the adverse events raw dataset).\nQualifiers need to be mapped to their corresponding topic variables.\nThe OAK ID variables are a combination of patient number, row number of the raw dataset, and raw source name.\nThese id variables provide key linkage between the SDTM datasets and the raw datasets during programming."
+  },
+  {
     "objectID": "index.html#how-we-will-code-today",
     "href": "index.html#how-we-will-code-today",
     "title": "R/Pharma SDTM Workshop",
@@ -158,7 +165,7 @@
     "href": "index.html#recap",
     "title": "R/Pharma SDTM Workshop",
     "section": "Recap",
-    "text": "Recap\nDid we review the following in the code?\n\nFunction call for various Algoriths\nassign datetime function\nHow does condition_add work?\nSDTM derived variables"
+    "text": "Recap\nDid we review the following in the code?\n\nFunction call for various Algorithms\nassign datetime function\nHow does condition_add work?\nSDTM derived variables"
   },
   {
     "objectID": "index.html#quiz---1",
@@ -193,7 +200,7 @@
     "href": "index.html#roadmap",
     "title": "R/Pharma SDTM Workshop",
     "section": "Roadmap",
-    "text": "Roadmap\nWe are planning to develop the below features in the subsequent releases.\n\n\nFunctions required to derive reference date variables in the DM domain.\n\nMetadata driven automation based on the standardized SDTM specification.\n\nFunctions required to program the EPOCH variable.\n\nFunctions to derive standard units and results based on metadata.\n\nFunctions required to create SUPP domains.\n\nMaking the algorithms part of the standard CDISC eCRF portal enabling automation of CDISC standard eCRFs."
+    "text": "Roadmap\nWe are planning to develop the below features in the subsequent releases.\n\n\nFunctions required to derive reference date variables in the DM domain.\n\nFunctions required to create SUPP domains.\n\nMetadata driven automation based on the standardized SDTM specification.\n\nFunctions required to program the EPOCH variable.\n\nFunctions to derive standard units and results based on metadata.\n\nCollaboration with CDISC 360i"
   },
   {
     "objectID": "index.html#get-involved",
