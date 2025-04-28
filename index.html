@@ -342,6 +342,35 @@ Rammprasad Ganapathy (Roche/Genentench)
 
   <p class="date">Tuesday, April 29, 2025</p>
 </section>
+<section>
+<section id="presenters" class="title-slide slide level1 center">
+<h1>Presenters</h1>
+
+</section>
+<section id="rammprasad-ganapathy-ram" class="slide level2">
+<h2>Rammprasad Ganapathy (Ram)</h2>
+<div>
+<ul>
+<li class="fragment">Principal Data Scientist ar Roche/Genentech with over 15 years of experience in EDC and Statistical Programming.</li>
+<li class="fragment">Based in San Francisco Bay area in CA.</li>
+<li class="fragment">Passionate about developing R packages, creating innovative solutions, and automation.</li>
+<li class="fragment">Led the team and the <code>roak</code> product from Vision to PoC and to Production.</li>
+<li class="fragment">It is now utilized in more than 50 studies at Roche for regulatory reporting.</li>
+<li class="fragment">Product owner and one of the developers for <code>sdtm.oak</code>.</li>
+</ul>
+</div>
+</section>
+<section id="shiyu-chen-shiyu" class="slide level2">
+<h2>Shiyu Chen (Shiyu)</h2>
+<div>
+<ul>
+<li class="fragment">R programmer at Atorus Research with 5 years of experience in Statistical Programming and Package Development.</li>
+<li class="fragment">Based in Hillsboro, OR.</li>
+<li class="fragment">Focus on building efficient and maintainable R packages that enhance automation and compliance in regulatory submissions.</li>
+<li class="fragment">Significant contributions to both Roche’s <code>roak</code> package and the open-source <code>sdtm.oak</code> package.</li>
+</ul>
+</div>
+</section>
 <section id="objectives" class="slide level2">
 <h2>Objectives</h2>
 <div>
@@ -377,7 +406,7 @@ Rammprasad Ganapathy (Roche/Genentench)
 <li class="fragment"><p>🕦 40 minutes <code>VS</code> domain programming</p></li>
 </ul>
 </div>
-</section>
+</section></section>
 <section>
 <section id="setup-of-workspace" class="title-slide slide level1 center">
 <h1>Setup of Workspace</h1>
@@ -388,8 +417,8 @@ Rammprasad Ganapathy (Roche/Genentench)
 <blockquote>
 <ul>
 <li class="fragment"><code>Rammprasad Ganapathy (Ram)</code> - <code>Presenter</code> 📣</li>
-<li class="fragment"><code>Edgar Manukyan</code> - <code>Chat Support</code> 💻</li>
-<li class="fragment"><code>Shiyu Chen</code> - <code>Chat Support</code> 💻</li>
+<li class="fragment"><code>Shiyu Chen (Shiyu)</code> - <code>Presenter</code> 📣</li>
+<li class="fragment"><code>Chat Support</code> 💻</li>
 </ul>
 </blockquote>
 </section>
@@ -631,7 +660,23 @@ Rammprasad Ganapathy (Roche/Genentench)
 <section id="reusable-algorithms" class="slide level2">
 <h2>Reusable Algorithms</h2>
 
-<img data-src="reusable_algorithms.jpg" class="center r-stretch"></section></section>
+<img data-src="reusable_algorithms.jpg" class="center r-stretch"></section>
+<section id="algorithms-compared-to-dplyr" class="slide level2 smaller">
+<h2>Algorithms compared to <code>dplyr</code></h2>
+<div>
+<ul>
+<li class="fragment"><code>sdtm.oak</code> algorithms enhances <code>dplyr</code> functions
+<ul>
+<li class="fragment">Allowing users to perform multiple actions within a single function call.</li>
+<li class="fragment">Applying if_else condtions, Controlled Terminology in a single function call by providing a simple approach compared to case_when statements.</li>
+<li class="fragment">Mapping an SDTM variable only if the source contains data, which is particularly useful when hardcoding.</li>
+<li class="fragment">Handling unknown dates, as well as date and time collected in separate or the same raw variables.</li>
+<li class="fragment">Adding qualifiers to topic variables using oak id variables.</li>
+</ul></li>
+<li class="fragment">While all these can be achieved using <code>dplyr</code>, the algorithms in <code>sdtm.oak</code> provide a more elegant and efficient approach.</li>
+</ul>
+</div>
+</section></section>
 <section>
 <section id="sdtm.oak-programming" class="title-slide slide level1 smaller center">
 <h1>sdtm.oak Programming</h1>
@@ -804,11 +849,11 @@ creation of SUPP domain EPOCH variable across all domains.</li>
 <p>We are planning to develop the below features in the subsequent releases.</p>
 <div>
 <ul>
-<li class="fragment">Functions required to derive reference date variables in the DM domain.<br>
+<li class="fragment">Functions required to derive reference date variables in the DM domain. (To be released in May - 2025)<br>
 </li>
-<li class="fragment">Functions required to create SUPP domains.<br>
+<li class="fragment">Functions required to create SUPP domains.(To be released in May - 2025)<br>
 </li>
-<li class="fragment">Metadata driven automation based on the standardized SDTM specification.<br>
+<li class="fragment">Metadata driven automation based on the standardized SDTM specification. (2025-Q4)<br>
 </li>
 <li class="fragment">Functions required to program the EPOCH variable.<br>
 </li>

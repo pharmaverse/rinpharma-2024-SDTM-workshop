@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "index.html#rammprasad-ganapathy-ram",
+    "href": "index.html#rammprasad-ganapathy-ram",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Rammprasad Ganapathy (Ram)",
+    "text": "Rammprasad Ganapathy (Ram)\n\n\nPrincipal Data Scientist ar Roche/Genentech with over 15 years of experience in EDC and Statistical Programming.\nBased in San Francisco Bay area in CA.\nPassionate about developing R packages, creating innovative solutions, and automation.\nLed the team and the roak product from Vision to PoC and to Production.\nIt is now utilized in more than 50 studies at Roche for regulatory reporting.\nProduct owner and one of the developers for sdtm.oak."
+  },
+  {
+    "objectID": "index.html#shiyu-chen-shiyu",
+    "href": "index.html#shiyu-chen-shiyu",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Shiyu Chen (Shiyu)",
+    "text": "Shiyu Chen (Shiyu)\n\n\nR programmer at Atorus Research with 5 years of experience in Statistical Programming and Package Development.\nBased in Hillsboro, OR.\nFocus on building efficient and maintainable R packages that enhance automation and compliance in regulatory submissions.\nSignificant contributions to both Roche’s roak package and the open-source sdtm.oak package."
+  },
+  {
     "objectID": "index.html#objectives",
     "href": "index.html#objectives",
     "title": "R/Pharma SDTM Workshop",
@@ -25,7 +39,7 @@
     "href": "index.html#who-will-help-you-achieve-the-workshops-objectives",
     "title": "R/Pharma SDTM Workshop",
     "section": "Who will help you achieve the workshop’s objectives!",
-    "text": "Who will help you achieve the workshop’s objectives!\n\n\nRammprasad Ganapathy (Ram) - Presenter 📣\nEdgar Manukyan - Chat Support 💻\nShiyu Chen - Chat Support 💻"
+    "text": "Who will help you achieve the workshop’s objectives!\n\n\nRammprasad Ganapathy (Ram) - Presenter 📣\nShiyu Chen (Shiyu) - Presenter 📣\nChat Support 💻"
   },
   {
     "objectID": "index.html#setting-up-your-workspace-to-code",
@@ -110,6 +124,13 @@
     "title": "R/Pharma SDTM Workshop",
     "section": "Reusable Algorithms",
     "text": "Reusable Algorithms"
+  },
+  {
+    "objectID": "index.html#algorithms-compared-to-dplyr",
+    "href": "index.html#algorithms-compared-to-dplyr",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Algorithms compared to dplyr",
+    "text": "Algorithms compared to dplyr\n\n\nsdtm.oak algorithms enhances dplyr functions\n\nAllowing users to perform multiple actions within a single function call.\nApplying if_else condtions, Controlled Terminology in a single function call by providing a simple approach compared to case_when statements.\nMapping an SDTM variable only if the source contains data, which is particularly useful when hardcoding.\nHandling unknown dates, as well as date and time collected in separate or the same raw variables.\nAdding qualifiers to topic variables using oak id variables.\n\nWhile all these can be achieved using dplyr, the algorithms in sdtm.oak provide a more elegant and efficient approach."
   },
   {
     "objectID": "index.html#programming-concepts",
@@ -200,7 +221,7 @@
     "href": "index.html#roadmap",
     "title": "R/Pharma SDTM Workshop",
     "section": "Roadmap",
-    "text": "Roadmap\nWe are planning to develop the below features in the subsequent releases.\n\n\nFunctions required to derive reference date variables in the DM domain.\n\nFunctions required to create SUPP domains.\n\nMetadata driven automation based on the standardized SDTM specification.\n\nFunctions required to program the EPOCH variable.\n\nFunctions to derive standard units and results based on metadata.\n\nCollaboration with CDISC 360i"
+    "text": "Roadmap\nWe are planning to develop the below features in the subsequent releases.\n\n\nFunctions required to derive reference date variables in the DM domain. (To be released in May - 2025)\n\nFunctions required to create SUPP domains.(To be released in May - 2025)\n\nMetadata driven automation based on the standardized SDTM specification. (2025-Q4)\n\nFunctions required to program the EPOCH variable.\n\nFunctions to derive standard units and results based on metadata.\n\nCollaboration with CDISC 360i"
   },
   {
     "objectID": "index.html#get-involved",
