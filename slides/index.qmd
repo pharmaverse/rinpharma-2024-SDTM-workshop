@@ -35,26 +35,28 @@ img_right_size <- 150
 img_center_size <- 300
 ```
 
-## Presenters
+# Presenters
+
+##  Rammprasad Ganapathy (Ram)
 
 ::: incremental
--   Rammprasad Ganapathy (Ram)
-    -   Principal Data Scientist with over 15 years of experience in EDC and Statistical 
-        Programming.
-    -   Based in San Francisco Bay area in CA.
-    -   Passionate about developing R packages, creating innovative solutions, and automation.
-    -   Led the team and the {roak} product from Vision → PoC → Production. It is now utilized in more than 50 studies at Roche for regulatory reporting.
-    -   Product owner and one of the developers for `sdtm.oak`.
+
+  - Principal Data Scientist ar Roche/Genentech with over 15 years of experience in EDC and Statistical Programming.
+  - Based in San Francisco Bay area in CA.
+  - Passionate about developing R packages, creating innovative solutions, and automation.
+  - Led the team and the `roak` product from Vision to PoC and to Production.
+  - It is now utilized in more than 50 studies at Roche for regulatory reporting.
+  - Product owner and one of the developers for `sdtm.oak`.
+
 :::
 
-::: incremental
+## Shiyu Chen (Shiyu)
 
--   Shiyu Chen
-    -   R programmer with 5 years of experience in Statistical Programming and Package Development.
-    -   Based in Hillsboro, OR.
-    -   Focus on building efficient and maintainable R packages that enhance automation and compliance in regulatory submissions.
-    -   Significant contributions to both Roche's {roak} package and the open-source {sdtm.oak} package.
-    
+::: incremental
+  - R programmer at Atorus Research with 5 years of experience in Statistical Programming and Package Development.
+  - Based in Hillsboro, OR.
+  - Focus on building efficient and maintainable R packages that enhance automation and compliance in regulatory submissions.
+  - Significant contributions to both Roche's `roak` package and the open-source `sdtm.oak` package.
 :::
 
 
@@ -228,18 +230,17 @@ img_center_size <- 300
 
 ![](reusable_algorithms.jpg){.center}
 
-## Algorithms compared to {dplyr}
+## Algorithms compared to `dplyr`  {.smaller}
 
 ::: incremental
-{sdtm.oak} algorithms enhance {dplyr}, allowing users to perform multiple actions within a single function call. These capabilities include:
-
--  Applying Controlled Terminology, providing a simple approach compared to case_when statements.
--  Mapping an SDTM variable only if the source contains data, which is particularly useful when hardcoding.
--  Handling unknown dates, as well as date and time collected in separate or the same raw variables.
--  Adding qualifiers to topic variables using OAK ID variables.
--  Applying conditions during mapping within a single function call.
-
-While these tasks can be achieved using {dplyr} alone, {sdtm.oak} offers a more elegant and efficient solution.
+- `sdtm.oak` algorithms enhances `dplyr` functions
+  - Allowing users to perform multiple actions within a single function call.
+  - Applying if_else condtions, Controlled Terminology in a single function call by providing a simple approach compared to case_when statements.
+  - Mapping an SDTM variable only if the source contains data, which is particularly useful when hardcoding.
+  - Handling unknown dates, as well as date and time collected in separate or the same raw variables.
+  - Adding qualifiers to topic variables using oak id variables.
+- While all these can be achieved using `dplyr`, the algorithms in `sdtm.oak` provide a more
+  elegant and efficient approach.
 :::
 
 # sdtm.oak Programming {.smaller}
@@ -391,10 +392,10 @@ releases.
 
 ::: incremental
 -   Functions required to derive reference date variables in the DM
-    domain.\
--   Functions required to create SUPP domains.\
+    domain. (To be released in May - 2025)\
+-   Functions required to create SUPP domains.(To be released in May - 2025)\
 -   Metadata driven automation based on the standardized SDTM
-    specification.\
+    specification. (2025-Q4)\
 -   Functions required to program the EPOCH variable.\
 -   Functions to derive standard units and results based on metadata.\
 -   Collaboration with CDISC 360i
