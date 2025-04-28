@@ -35,6 +35,29 @@ img_right_size <- 150
 img_center_size <- 300
 ```
 
+## Presenters
+
+::: incremental
+-   Rammprasad Ganapathy (Ram)
+    -   Principal Data Scientist with over 15 years of experience in EDC and Statistical 
+        Programming.
+    -   Based in San Francisco Bay area in CA.
+    -   Passionate about developing R packages, creating innovative solutions, and automation.
+    -   Led the team and the {roak} product from Vision → PoC → Production. It is now utilized in more than 50 studies at Roche for regulatory reporting.
+    -   Product owner and one of the developers for `sdtm.oak`.
+:::
+
+::: incremental
+
+-   Shiyu Chen
+    -   R programmer with 5 years of experience in Statistical Programming and Package Development.
+    -   Based in Hillsboro, OR.
+    -   Focus on building efficient and maintainable R packages that enhance automation and compliance in regulatory submissions.
+    -   Significant contributions to both Roche's {roak} package and the open-source {sdtm.oak} package.
+    
+:::
+
+
 ## Objectives
 
 ::: incremental
@@ -76,8 +99,8 @@ img_center_size <- 300
 ## Who will help you achieve the workshop's objectives!
 
 > > -   `Rammprasad Ganapathy (Ram)` - `Presenter` 📣
-> > -   `Edgar Manukyan` - `Chat Support` 💻
-> > -   `Shiyu Chen` - `Chat Support` 💻
+> > -   `Shiyu Chen (Shiyu)` - `Presenter` 📣
+> > -   `Chat Support` 💻
 
 ## Setting up your Workspace to "code" {.smaller}
 
@@ -204,6 +227,20 @@ img_center_size <- 300
 ## Reusable Algorithms
 
 ![](reusable_algorithms.jpg){.center}
+
+## Algorithms compared to {dplyr}
+
+::: incremental
+{sdtm.oak} algorithms enhance {dplyr}, allowing users to perform multiple actions within a single function call. These capabilities include:
+
+-  Applying Controlled Terminology, providing a simple approach compared to case_when statements.
+-  Mapping an SDTM variable only if the source contains data, which is particularly useful when hardcoding.
+-  Handling unknown dates, as well as date and time collected in separate or the same raw variables.
+-  Adding qualifiers to topic variables using OAK ID variables.
+-  Applying conditions during mapping within a single function call.
+
+While these tasks can be achieved using {dplyr} alone, {sdtm.oak} offers a more elegant and efficient solution.
+:::
 
 # sdtm.oak Programming {.smaller}
 
