@@ -37,14 +37,14 @@ img_center_size <- 300
 
 # Presenters
 
-##  Rammprasad Ganapathy (Ram)
+##  Rammprasad Ganapathy (Ram) {.smaller}
 
 ::: incremental
 
   - Principal Data Scientist ar Roche/Genentech with over 15 years of experience in EDC and Statistical Programming.
   - Based in San Francisco Bay area in CA.
   - Passionate about developing R packages, creating innovative solutions, and automation.
-  - Led the team and the `roak` product from Vision to PoC and to Production.
+  - Led the OAK team and the `roak` product from the initial vision of metadata driven automation through PoC to Production.
   - It is now utilized in more than 50 studies at Roche for regulatory reporting.
   - Product owner and one of the developers for `sdtm.oak`.
 
@@ -385,7 +385,7 @@ When to use hardcode mapping algorithm?
 -   Quick preview of the sdtm specifications (draft stage)
 -   Showcase the potential for automation.
 
-## Roadmap
+## Roadmap  {.smaller}
 
 We are planning to develop the below features in the subsequent
 releases.
