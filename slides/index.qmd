@@ -45,7 +45,7 @@ img_center_size <- 300
   - Based in San Francisco Bay area in CA.
   - Passionate about developing R packages, creating innovative solutions, and automation.
   - Led the OAK team and the `roak` product from the initial vision of metadata driven automation through PoC to Production.
-  - It is now utilized in more than 50 studies at Roche for regulatory reporting.
+  - It is now utilized to automate SDTM in more than 50 studies at Roche for regulatory reporting.
   - Product owner and one of the developers for `sdtm.oak`.
 
 :::
@@ -132,7 +132,7 @@ img_center_size <- 300
     Pfizer, GSK, Vertex, Atorus Research, Pattern Institute, Transition
     Technologies Science.
 -   Part of the pharmaverse Group of packages.
--   Inspired by the Roche's {roak} package.
+-   Inspired by the Roche's `roak` package.
 -   Addresses a critical gap in the pharmaverse suite by enabling study
     programmers to create SDTM datasets in R, complementing the existing
     capabilities for ADaM, TLGs, eSubmission, etc.
@@ -410,5 +410,15 @@ any of the following means:
 Slack: https://oakgarden.slack.com\
 GitHub: https://github.com/pharmaverse/sdtm.oak\
 CDISC Wiki: https://wiki.cdisc.org/display/oakgarden
+
+## Learning Resources
+
+[sdtm.oak Documentation](https://pharmaverse.github.io/sdtm.oak/)
+
+[sdtm.oak Youtube Video](https://www.youtube.com/watch?v=H0FdhG9_ttU&list=PLMtxz1fUYA5C67SvhSCINluOV2EmyjKql&index=3&ab_channel=RinPharma)
+
+[sdtm.oak Pharmaverse Blog](https://pharmaverse.github.io/blog/posts/2024-10-24_introducing.../introducing_sdtm.oak.html)
+
+[SDTM Programming in R with sdtm.oak](https://phuse.s3.eu-central-1.amazonaws.com/Archive/2025/Connect/US/Orlando/POS_PP31.pdf)
 
 ## Thank you

@@ -123,18 +123,19 @@ cm <-
   ) %>%
   # Map CMENRTPT using assign_ct, raw_var=IT.CMONGO,tgt_var=CMENRTPT
   # If IT.CMONGO is Yes then CM.CMENRTPT = 'ONGOING'
-  assign_ct(
-    raw_dat = cm_raw,
+  hardcode_ct(
+    raw_dat = condition_add(cm_raw, IT.CMONGO == "Yes"),
     raw_var = "IT.CMONGO",
     tgt_var = "CMENRTPT",
     ct_spec = study_ct,
     ct_clst = "C66728",
+    tgt_val = "Ongoing",
     id_vars = oak_id_vars()
   ) %>%
   # Map CM.CMENTPT using hardcode_no_ct, raw_var = IT.CMONGO, tgt_var=CMMENTPT
   # If IT.CMONGO is Yes then CM.CMENTPT = 'DATE OF LAST ASSESSMENT'
   hardcode_no_ct(
-    raw_dat = cm_raw,
+    raw_dat =  condition_add(cm_raw, IT.CMONGO == "Yes"),
     raw_var = "IT.CMONGO",
     tgt_var = "CMENTPT",
     tgt_val = "DATE OF LAST ASSESSMENT",
