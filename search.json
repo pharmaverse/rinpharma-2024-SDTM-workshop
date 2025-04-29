@@ -4,7 +4,7 @@
     "href": "index.html#rammprasad-ganapathy-ram",
     "title": "R/Pharma SDTM Workshop",
     "section": "Rammprasad Ganapathy (Ram)",
-    "text": "Rammprasad Ganapathy (Ram)\n\n\nPrincipal Data Scientist ar Roche/Genentech with over 15 years of experience in EDC and Statistical Programming.\nBased in San Francisco Bay area in CA.\nPassionate about developing R packages, creating innovative solutions, and automation.\nLed the OAK team and the roak product from the initial vision of metadata driven automation through PoC to Production.\nIt is now utilized in more than 50 studies at Roche for regulatory reporting.\nProduct owner and one of the developers for sdtm.oak."
+    "text": "Rammprasad Ganapathy (Ram)\n\n\nPrincipal Data Scientist ar Roche/Genentech with over 15 years of experience in EDC and Statistical Programming.\nBased in San Francisco Bay area in CA.\nPassionate about developing R packages, creating innovative solutions, and automation.\nLed the OAK team and the roak product from the initial vision of metadata driven automation through PoC to Production.\nIt is now utilized to automate SDTM in more than 50 studies at Roche for regulatory reporting.\nProduct owner and one of the developers for sdtm.oak."
   },
   {
     "objectID": "index.html#shiyu-chen-shiyu",
@@ -229,6 +229,13 @@
     "title": "R/Pharma SDTM Workshop",
     "section": "Get Involved",
     "text": "Get Involved\nPlease try the package and provide us with your feedback, or get involved in the development of new features. We can be reached through any of the following means:\nSlack: https://oakgarden.slack.com\nGitHub: https://github.com/pharmaverse/sdtm.oak\nCDISC Wiki: https://wiki.cdisc.org/display/oakgarden"
+  },
+  {
+    "objectID": "index.html#learning-resources",
+    "href": "index.html#learning-resources",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Learning Resources",
+    "text": "Learning Resources\nsdtm.oak Documentation\nsdtm.oak Youtube Video\nsdtm.oak Pharmaverse Blog\nSDTM Programming in R with sdtm.oak"
   },
   {
     "objectID": "index.html#thank-you",
