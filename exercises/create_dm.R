@@ -50,7 +50,7 @@ ref_date_conf_df <- tibble::tribble(
   "ex_raw",       "IT.ECENDAT", NA_character_, "dd-mmm-yyyy", NA_character_,     "RFXENDTC",
   "ds_raw",       "IT.DSSTDAT", NA_character_,  "mm-dd-yyyy", NA_character_,      "RFSTDTC",
   "ex_raw",       "IT.ECENDAT", NA_character_, "dd-mmm-yyyy", NA_character_,      "RFENDTC",
-  "dm_raw",            "IC_DT", NA_character_, "dd-mmm-yyyy", NA_character_,      "RFICDTC",
+  "dm_raw",            "IC_DT", NA_character_,  "mm/dd/yyyy", NA_character_,      "RFICDTC",
   "ds_raw",          "DSDTCOL",     "DSTMCOL",  "mm-dd-yyyy",         "H:M",     "RFPENDTC",
   "ds_raw",          "DEATHDT", NA_character_,  "mm/dd/yyyy", NA_character_,       "DTHDTC"
 )
@@ -65,11 +65,11 @@ dm <-
     id_vars = oak_id_vars()
   ) %>%
   # Map AGEU using assign_ct
-  assign_no_ct(
+  hardcode_ct(
     raw_dat = dm_raw,
     raw_var = "IT.AGE",
     tgt_var = "AGEU",
-    tgt_val = "year",
+    tgt_val = "Year",
     ct_spec = study_ct,
     ct_clst = "C66781",
     id_vars = oak_id_vars()
@@ -77,8 +77,8 @@ dm <-
   # Map SEX using assign_no_ct
   assign_ct(
     raw_dat = dm_raw,
-    raw_var = "IT.RACE",
-    tgt_var = "RACE",
+    raw_var = "IT.SEX",
+    tgt_var = "SEX",
     ct_spec = study_ct,
     ct_clst = "C66731",
     id_vars = oak_id_vars()
@@ -102,10 +102,12 @@ dm <-
     id_vars = oak_id_vars()
   ) %>%
   # Map ARM using assign_no_ct
-  assign_no_ct(
+  assign_ct(
     raw_dat = dm_raw,
     raw_var = "PLANNED_ARM",
     tgt_var = "ARM",
+    ct_spec = study_ct,
+    ct_clst = "ARM",
     id_vars = oak_id_vars()
   ) %>%
   # Map ARMCD using assign_no_ct
@@ -116,10 +118,12 @@ dm <-
     id_vars = oak_id_vars()
   ) %>%
   # Map ACTARM using assign_no_ct
-  assign_no_ct(
+  assign_ct(
     raw_dat = dm_raw,
     raw_var = "ACTUAL_ARM",
     tgt_var = "ACTARM",
+    ct_spec = study_ct,
+    ct_clst = "ARM",
     id_vars = oak_id_vars()
   ) %>%
   # Map ACTARMCD using assign_no_ct
@@ -151,7 +155,7 @@ dm <-
   ) %>%
   mutate(STUDYID = dm_raw$STUDY,
          DOMAIN = "DM",
-         SUBJID = dm_raw$PATNUM,
+         SUBJID = substr(dm_raw$PATNUM, 5, 8),
          USUBJID = paste0("01-", dm_raw$PATNUM),
          COUNTRY = dm_raw$COUNTRY,
          DTHFL = dplyr::if_else(is.na(DTHDTC), NA_character_, "Y")) %>%
@@ -226,6 +230,13 @@ dm <-
                       ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
+  ) %>%
+  derive_study_day(
+    sdtm_in = .,
+    dm_domain = .,
+    tgdt = "DMDTC",
+    refdt = "RFXSTDTC",
+    study_day_var = "DMDY"
   ) %>%
   select(
     "STUDYID", "DOMAIN", "USUBJID", "SUBJID",  "RFSTDTC", "RFENDTC", "RFXSTDTC", "RFXENDTC", "RFICDTC", "RFPENDTC", 

@@ -19,7 +19,7 @@ dm_raw <- sdtm_dm |>
     IC_DT = format(as.Date(RFSTDTC, format = "%Y-%m-%d") - lubridate::days(7), "%m/%d/%Y")
   ) |>
   dplyr::select(
-    STUDY, PATNUM, IT.AGE, IT.ETHNIC, IT.RACE, COUNTRY, 
+    STUDY, PATNUM, IT.AGE, IT.SEX, IT.ETHNIC, IT.RACE, COUNTRY, 
     PLANNED_ARM, PLANNED_ARMCD, ACTUAL_ARM, ACTUAL_ARMCD, COL_DT, IC_DT
   )
 
