@@ -4,7 +4,7 @@
 #' 
 #' Input 
 #' raw data: subject_disposition_raw_data.csv
-#' study_controlled_terminology : sdtm_ct_pharmasug.csv
+#' study_controlled_terminology : sdtm_ct.csv
 #' dm domain : pharmaversesdtm::dm
 #'
 
@@ -12,7 +12,7 @@ library(sdtm.oak)
 library(dplyr)
 
 # Read CT Specification
-study_ct <- read.csv("./datasets/sdtm_ct_pharmasug.csv")
+study_ct <- read.csv("./datasets/sdtm_ct.csv")
 
 # Read in raw data
 ds_raw <- read.csv("./datasets/subject_disposition_raw_data.csv",
@@ -140,6 +140,6 @@ ds <-
   ) %>%
   # Derive sequence number
   derive_seq(tgt_var = "DSSEQ",
-             rec_vars= c("USUBJID", "DSTERM")) %>%
+             rec_vars= c("USUBJID", "VISITNUM")) %>%
   select("STUDYID", "DOMAIN", "USUBJID", "DSSEQ", "DSTERM", "DSDECOD", 
          "DSCAT", "VISITNUM", "VISIT", "DSDTC", "DSSTDTC", "DSSTDY")
