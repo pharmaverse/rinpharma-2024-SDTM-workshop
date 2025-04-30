@@ -37,20 +37,20 @@ dm <- admiral::convert_blanks_to_na(dm)
 # Map topic variable DSTERM using assign_no_ct algorithm
 ds <- 
   assign_no_ct(
-    raw_dat = condition_add(ds_raw, is.na(OTHERSP)),
+    raw_dat = ds_raw,
     raw_var = "IT.DSTERM",
     tgt_var = "DSTERM",
     id_vars = oak_id_vars()
   ) %>%
   assign_no_ct(
-    raw_dat = condition_add(ds_raw, !is.na(OTHERSP)),
+    raw_dat = ds_raw,
     raw_var = "OTHERSP",
     tgt_var = "DSTERM",
     id_vars = oak_id_vars()
   ) %>%
   # Map DSDECOD using assign_ct algorithm
   assign_ct(
-    raw_dat = condition_add(ds_raw, is.na(OTHERSP)),
+    raw_dat = ds_raw,
     raw_var = "IT.DSDECOD",
     tgt_var = "DSDECOD",
     ct_spec = study_ct,
@@ -58,7 +58,7 @@ ds <-
     id_vars = oak_id_vars()
   ) %>%
   assign_ct(
-    raw_dat = condition_add(ds_raw, !is.na(OTHERSP)),
+    raw_dat = ds_raw,
     raw_var = "OTHERSP",
     tgt_var = "DSDECOD",
     ct_spec = study_ct,
@@ -76,8 +76,8 @@ ds <-
     id_vars = oak_id_vars()
   ) %>%
   hardcode_ct(
-    raw_dat = condition_add(ds_raw, IT.DSTERM %in% c("Final Lab Visit", "Final Retrieval Visit")),
-    raw_var = "IT.DSTERM",
+    raw_dat = condition_add(ds_raw, !is.na(OTHERSP)),
+    raw_var = "OTHERSP",
     tgt_var = "DSCAT",
     tgt_val = "OTHER EVENT",
     ct_spec = study_ct,
