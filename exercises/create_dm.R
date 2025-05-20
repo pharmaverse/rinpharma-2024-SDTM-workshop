@@ -40,7 +40,7 @@ ex_raw <- ex_raw %>%
 dm_raw <- dm_raw %>%
   generate_oak_id_vars(
     pat_var = "PATNUM",
-    raw_src = "ds_raw"
+    raw_src = "dm_raw"
   )
 
 # Create reference dates configuration file
@@ -136,12 +136,11 @@ dm <-
   # Map DTHDTC using oak_cal_ref_dates
   oak_cal_ref_dates(ds_in = .,
                     der_var = "DTHDTC",
-                    min_max = "max",
+                    min_max = "min",
                     ref_date_config_df = ref_date_conf_df,
                     raw_source = list(
                       ex_raw = ex_raw,
                       ds_raw = ds_raw,
-                      ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
   ) %>%
@@ -167,7 +166,6 @@ dm <-
                     raw_source = list(
                       ex_raw = ex_raw,
                       ds_raw = ds_raw,
-                      ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
   ) %>%
@@ -179,7 +177,6 @@ dm <-
                     raw_source = list(
                       ex_raw = ex_raw,
                       ds_raw = ds_raw,
-                      ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
   ) %>%
@@ -191,7 +188,6 @@ dm <-
                     raw_source = list(
                       ex_raw = ex_raw,
                       ds_raw = ds_raw,
-                      ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
   ) %>%
@@ -203,7 +199,6 @@ dm <-
                     raw_source = list(
                       ex_raw = ex_raw,
                       ds_raw = ds_raw,
-                      ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
   ) %>%
@@ -215,7 +210,6 @@ dm <-
                     raw_source = list(
                       ex_raw = ex_raw,
                       ds_raw = ds_raw,
-                      ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
   ) %>%
@@ -227,7 +221,6 @@ dm <-
                     raw_source = list(
                       ex_raw = ex_raw,
                       ds_raw = ds_raw,
-                      ex_raw = ex_raw,
                       dm_raw = dm_raw
                     )
   ) %>%

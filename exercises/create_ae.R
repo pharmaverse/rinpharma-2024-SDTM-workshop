@@ -35,7 +35,7 @@ dm <- admiral::convert_blanks_to_na(dm)
 # Create AE domain. The first step in creating AE domain is to create the topic variable
 ae <-
   # Derive topic variable
-  # Map AETERM using assign_ct, raw_var=IT.AETERM, tgt_var=AETERM
+  # Map AETERM using assign_no_ct, raw_var=IT.AETERM, tgt_var=AETERM
   assign_no_ct(
     raw_dat = ae_raw,
     raw_var = "IT.AETERM",

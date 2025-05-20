@@ -9,7 +9,7 @@ ae_raw <- sdtm_ae |>
     IT.AETERM = tools::toTitleCase(tolower(AETERM)),
     IT.AESEV = ifelse(AESEV == "MILD", "Mild Adverse Event",
                       ifelse(AESEV == "MODERATE", "Moderate Adverse Event",
-                             "SEVERE", "Severe Adverse Event")),
+                             ifelse("SEVERE", "Severe Adverse Event", AESEV))),
     IT.AESER = ifelse(AESER == "Y", "Yes", "No"),
     IT.AEACN = AEACN,
     IT.AEREL = tools::toTitleCase(tolower(AEREL)), #CT
