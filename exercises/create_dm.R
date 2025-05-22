@@ -64,7 +64,7 @@ dm <-
     tgt_var = "AGE",
     id_vars = oak_id_vars()
   ) %>%
-  # Map AGEU using assign_ct
+  # Map AGEU using hardcode_ct
   hardcode_ct(
     raw_dat = dm_raw,
     raw_var = "IT.AGE",
@@ -74,7 +74,7 @@ dm <-
     ct_clst = "C66781",
     id_vars = oak_id_vars()
   ) %>%
-  # Map SEX using assign_no_ct
+  # Map SEX using assign_ct
   assign_ct(
     raw_dat = dm_raw,
     raw_var = "IT.SEX",
@@ -83,7 +83,7 @@ dm <-
     ct_clst = "C66731",
     id_vars = oak_id_vars()
   ) %>%
-  # Map ETHNIC using assign_no_ct
+  # Map ETHNIC using assign_ct
   assign_ct(
     raw_dat = dm_raw,
     raw_var = "IT.ETHNIC",
@@ -92,7 +92,7 @@ dm <-
     ct_clst = "C66790",
     id_vars = oak_id_vars()
   ) %>%
-  # Map RACE using assign_no_ct
+  # Map RACE using assign_ct
   assign_ct(
     raw_dat = dm_raw,
     raw_var = "IT.RACE",
@@ -101,7 +101,7 @@ dm <-
     ct_clst = "C74457",
     id_vars = oak_id_vars()
   ) %>%
-  # Map ARM using assign_no_ct
+  # Map ARM using assign_ct
   assign_ct(
     raw_dat = dm_raw,
     raw_var = "PLANNED_ARM",
@@ -117,7 +117,7 @@ dm <-
     tgt_var = "ARMCD",
     id_vars = oak_id_vars()
   ) %>%
-  # Map ACTARM using assign_no_ct
+  # Map ACTARM using assign_ct
   assign_ct(
     raw_dat = dm_raw,
     raw_var = "ACTUAL_ARM",
