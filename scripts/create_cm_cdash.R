@@ -3,10 +3,10 @@
 #' Label: R program to create CM Domain
 #' 
 #' Referece Documents: 
-#'     eCRF - ~/rinpharma-2024-SDTM-workshop/specs/cm_cdash/CM_HTML.html
-#'            ~/rinpharma-2024-SDTM-workshop/specs/cm_cdash/ CM_Excel.xlsx
+#'     eCRF - ~/rinpharma-SDTM-workshop/specs/cm_cdash/CM_HTML.html
+#'            ~/rinpharma-SDTM-workshop/specs/cm_cdash/ CM_Excel.xlsx
 #'            
-#'    aCRF - ~/rinpharma-2024-SDTM-workshop/specs/cm_cdash/CM_cdash_acrf.pdf
+#'    aCRF - ~/rinpharma-SDTM-workshop/specs/cm_cdash/CM_cdash_acrf.pdf
 #'    
 #'    SDTM specification in the OAK foramt. Just for reference, not used in programs.
 #'    
@@ -40,7 +40,7 @@ cm_raw <- cm_raw %>%
   )
 
 # Read in DM domain to derive study day
-dm <- read.csv("./datasets/dm.csv")
+dm <- pharmaversesdtm::dm
 
 dm <- admiral::convert_blanks_to_na(dm)
 

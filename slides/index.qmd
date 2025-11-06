@@ -9,6 +9,10 @@ format:
     theme: solarized
     transition: convex
     background-transition: fade
+execute:
+  echo: true
+  freeze: false
+cache: false
 editor:
   markdown:
     wrap: 72
@@ -64,7 +68,7 @@ img_center_size <- 300
 
 ::: incremental
 -   By the end of this workshop you will have:
-    -   Updated code for SDTM `cm` and `vs` using `sdtm.oak`.
+    -   Updated code for SDTM `cm`, `vs`, `dm`, `ae` using `sdtm.oak`.
     -   Gained an understanding of how to use `sdtm.oak`.
     -   Gained an understanding of how to use resources for building
         SDTM in `R`.
@@ -74,6 +78,7 @@ img_center_size <- 300
 
 ::: incremental
 -   Basic knowledge of CDISC Standards (SDTM Domains)
+-     🦺 But even lacking CDSIC knowledge, we still think you will gain some great learnings today! 🦺
 -   Basic background in R and its packages
 -   Basic familiarity with RStudio IDE.
 -   `%>%` chaining functions together
@@ -85,7 +90,7 @@ img_center_size <- 300
 
 -   🕙 10 minutes Setup of Workspace
 
--   🕙 10 minutes Introduction to `sdtm.oak`
+-   🕙 20 minutes Introduction to `sdtm.oak`
 
 -   🕥 30 minutes `CM` domain programming
 
@@ -96,6 +101,8 @@ img_center_size <- 300
 -   🕦 10 minutes `DM` domain programming
 
 -   🕦 10 minutes `AE` domain programming
+
+-   🕦 Optional Exercise
 :::
 
 # Setup of Workspace
@@ -310,7 +317,7 @@ img_center_size <- 300
     -   Occasional Check-in Poll
 -   Important to move along quickly
     -   Please post questions to chat
-    -   Full scripts are available in `exercises` folder
+    -   Full scripts are available in `scripts` folder
 :::
 
 ## Review specs
@@ -350,13 +357,46 @@ What function should be used for mapping for CMROUTE
 
 # Workshop - Create VS domain
 
-## Recap
+## Review specs
 
-Did we review the following in the code?
+Review aCRF
 
--   Mapping one topic variable and its qualifies at a time
--   Mapping qualifiers common to all topic variables
--   Usage of `oak_id_vars`
+-  [VitalSigns_aCRF](https://github.com/pharmaverse/pharmaverseraw/blob/main/vignettes/articles/aCRFs/VitalSigns_aCRF.pdf)
+
+## Code Walkthrough
+
+Run the code and explain to the users
+
+## Review a record Vitals Raw dataset
+
+:::: {.columns}
+
+::: {.column}
+* PATNUM:  701-1034
+* OAK_ID:  213
+* INSTANCE: WEEK2
+* VTLD: 15-Jul-2014
+* TMPTC: after Lying Down for 5 Minutes
+* SYS_BP:   183.0
+* DIA_BP:   81.0
+:::
+
+::::
+
+## Review a record in VS
+
+:::: {.columns}
+
+::: {.column}
+* USUBJID:  01-701-1034
+* VSTESTCD: SYSBP and DIABP
+* VISIT: WEEK2
+* VSDTC: 2014-07-15
+* VSTPT: AFTER LYING DOWN FOR 5 MINUTES
+* VSORRES:   183.0 and 81.0
+:::
+
+::::
 
 ## Quiz - 2
 
@@ -375,41 +415,147 @@ When to use hardcode mapping algorithm?
 > -   **b) To hardcode a value use hardcode algorithms. To assign a
 >     collected value use assign algorithms**
 
+# Workshop - Create DM domain
+
+## Review specs
+
+Review aCRF
+
+-  [Demographics_aCRF](https://github.com/pharmaverse/pharmaverseraw/blob/main/vignettes/articles/aCRFs/Demographics_aCRF.pdf)
+-  [Exposure_as_collected_aCRF](https://github.com/pharmaverse/pharmaverseraw/blob/main/vignettes/articles/aCRFs/Exposure_as_collected_aCRF.pdf)
+-  [Subject_Disposition_aCRF](https://github.com/pharmaverse/pharmaverseraw/blob/main/vignettes/articles/aCRFs/Subject_Disposition_aCRF.pdf)
+
+## Reference date derivation
+
+-   DM domain has reference date variables like RFSTDTC, RFENDTC, RFICDTC, RFPENDTC.
+-   Usually the programming logic includes deriving this as a minimum or maximum date
+    from the raw data across multiple eCRFs.
+-   `oak_cal_ref_dates` function can help users derive these reference dates
+    based on the metadata provided in a configuration file - `ref_date_config_df`.
+-   Users have to prepare this additional metadata file to derive reference dates.
+
+## Reference date configuration file
+
+-   An intuitive way to let {sdtm.oak} know where to look for the reference dates.
+-   Multiple eCRFs or raw datasets and variables can be specified to derive a specific
+    reference date. The columns in the file are
+-   raw_dataset_name : Name of the raw dataset. 
+-   date_var : Date variable name from the raw dataset. 
+-   time_var : Time variable name from the raw dataset. 
+-   dformat : Format of the date collected in raw data. 
+-   tformat: Format of the time collected in raw data. 
+-   sdtm_var_name : Reference variable name.
+
+## Code Walkthrough
+
+Run the code and explain to the users
+
+## Review a record in Raw dataset
+
+:::: {.columns}
+
+::: {.column}
+* PATNUM:  701-1034
+* OAK_ID:  5
+* IT.AGE: 77
+* IT.SEX: Female
+:::
+
+::::
+
+## Review a record in DM
+
+:::: {.columns}
+
+::: {.column}
+* USUBJID:  01-701-1034
+* AGE:  77
+* SEX: FEMALE
+:::
+
+::::
+
+# Workshop - Create AE domain
+
+## Pharmaverse Examples
+
+::: incremental
+-   Review the AE from [Pharmaverse Examples](https://pharmaverse.github.io/examples/sdtm/ae.html)
+-   Copy and execute the code snippets
+:::
+
 # Release summary
 
 ::: incremental
 -   Users can create the majority of the SDTM domains.
--   **Not Supported Domains**\
-    DM (Demographics)\
-    EX (Exposure)\
+-   **Yet to be developed Domains**\
     Trial Design Domains\
     SV (Subject Visits)\
     SE (Subject Elements)\
     RELREC (Related Records)\
-    Associated Person domains\
-    creation of SUPP domain EPOCH variable across all domains.
+    Associated Person domains.
 :::
 
-## sdtm specifications
+## Check-in Exercise {.smaller}
 
--   Quick preview of the sdtm specifications (draft stage)
--   Showcase the potential for automation.
+Open exercises/sdtm_exercises.R
 
-## Roadmap  {.smaller}
+```{r, eval = FALSE}
+library(sdtm.oak)
+library(pharmaverseraw)
+library(dplyr)
 
-We are planning to develop the below features in the subsequent
-releases.
+#AE aCRF - https://github.com/pharmaverse/pharmaverseraw/blob/main/vignettes/articles/aCRFs/AdverseEvent_aCRF.pdf
 
-::: incremental
--   Functions required to derive reference date variables in the DM
-    domain. (To be released in May - 2025)\
--   Functions required to create SUPP domains.(To be released in May - 2025)\
--   Metadata driven automation based on the standardized SDTM
-    specification. (2025-Q4)\
--   Functions required to program the EPOCH variable.\
--   Functions to derive standard units and results based on metadata.\
--   Collaboration with CDISC 360i
-:::
+# Exercise 1: Map AETERM from raw_var=IT.AETERM, tgt_var=AETERM
+
+# Exercise 2:  Map AESER from raw_var=IT.AESER, tgt_var=AESER. Codelist code for AESDTH is C66742
+
+# Exercise 3:  Map AESDTH from raw_var=IT.AESDTH, tgt_var=AESDTH.Annotation text is 
+#    If "Yes" then AESDTH = "Y" else Not Submitted. Codelist code for AESDTH is C66742
+
+```
+
+
+```{r}
+#| echo: false
+#| cache: false
+library(countdown)
+countdown::countdown(minutes = 10)
+```
+
+## Exercise Solution
+
+```{r, eval = FALSE}
+ae <-
+  # Derive topic variable
+  # Map AETERM using assign_no_ct, raw_var=IT.AETERM, tgt_var=AETERM
+  assign_no_ct(
+    raw_dat = ae_raw,
+    raw_var = "IT.AETERM",
+    tgt_var = "AETERM",
+    id_vars = oak_id_vars()
+  ) %>%
+  # Map AESER using assign_no_ct, raw_var=IT.AESER, tgt_var=AESER
+  assign_ct(
+    raw_dat = ae_raw,
+    raw_var = "IT.AESER",
+    tgt_var = "AESER",
+    ct_spec = study_ct,
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
+  ) %>%
+  # Map AESDTH using condition_add & assign_ct, raw_var=IT.AESDTH, tgt_var=AESDTH
+  assign_ct(
+    raw_dat = condition_add(ae_raw, IT.AESDTH == "Yes"),
+    raw_var = "IT.AESDTH",
+    tgt_var = "AESDTH",
+    ct_spec = study_ct,
+    ct_clst = "C66742",
+    id_vars = oak_id_vars()
+  )
+```
+
 
 ## Get Involved
 
@@ -425,10 +571,12 @@ CDISC Wiki: https://wiki.cdisc.org/display/oakgarden
 
 [sdtm.oak Documentation](https://pharmaverse.github.io/sdtm.oak/)
 
+[Pharmaverse Examples](https://pharmaverse.github.io/examples/)
+
 [sdtm.oak Youtube Video](https://www.youtube.com/watch?v=H0FdhG9_ttU&list=PLMtxz1fUYA5C67SvhSCINluOV2EmyjKql&index=3&ab_channel=RinPharma)
 
 [sdtm.oak Pharmaverse Blog](https://pharmaverse.github.io/blog/posts/2024-10-24_introducing.../introducing_sdtm.oak.html)
 
-[SDTM Programming in R with sdtm.oak](https://phuse.s3.eu-central-1.amazonaws.com/Archive/2025/Connect/US/Orlando/POS_PP31.pdf)
+[SDTM Programming in R with sdtm.oak Poster](https://phuse.s3.eu-central-1.amazonaws.com/Archive/2025/Connect/US/Orlando/POS_PP31.pdf)
 
 ## Thank you
