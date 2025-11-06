@@ -39,7 +39,7 @@
     "href": "index.html#who-will-help-you-achieve-the-workshops-objectives",
     "title": "R/Pharma SDTM Workshop",
     "section": "Who will help you achieve the workshop’s objectives!",
-    "text": "Who will help you achieve the workshop’s objectives!\n\n\nRammprasad Ganapathy (Ram) - Presenter 📣\nShiyu Chen (Shiyu) - Presenter 📣\nChat Support 💻"
+    "text": "Who will help you achieve the workshop’s objectives!\n\n\n\n\nRammprasad Ganapathy (Ram) - Presenter 📣\nShiyu Chen (Shiyu) - Presenter 📣\nChat Support 💻"
   },
   {
     "objectID": "index.html#setting-up-your-workspace-to-code",
@@ -193,7 +193,7 @@
     "href": "index.html#quiz---1",
     "title": "R/Pharma SDTM Workshop",
     "section": "Quiz - 1",
-    "text": "Quiz - 1\nWhat function should be used for mapping for CMROUTE\n\n\n\n  assign_no_ct() \n\n\n  assign_ct() \n\n\n\n\nCorrect answer:\nb) As CMROUTE has a codelist associated we need to use   assign_ct()"
+    "text": "Quiz - 1\nWhat function should be used for mapping for CMROUTE\n\n\n\n\n\n  assign_no_ct() \n\n\n  assign_ct() \n\n\n\n\n\n\n\n\nCorrect answer:\nb) As CMROUTE has a codelist associated we need to use   assign_ct()"
   },
   {
     "objectID": "index.html#recap-1",
@@ -207,7 +207,7 @@
     "href": "index.html#quiz---2",
     "title": "R/Pharma SDTM Workshop",
     "section": "Quiz - 2",
-    "text": "Quiz - 2\nWhen to use hardcode mapping algorithm?\n\n\n\nTo assign a collected value on the eCRF\n\n\nTo Hardcode a SDTM variable that has not directly collected on the eCRF.\n\n\n\n\nCorrect answer:\nb) To hardcode a value use hardcode algorithms. To assign a collected value use assign algorithms"
+    "text": "Quiz - 2\nWhen to use hardcode mapping algorithm?\n\n\n\n\n\nTo assign a collected value on the eCRF\n\n\nTo Hardcode a SDTM variable that has not directly collected on the eCRF.\n\n\n\n\n\n\n\n\nCorrect answer:\nb) To hardcode a value use hardcode algorithms. To assign a collected value use assign algorithms"
   },
   {
     "objectID": "index.html#sdtm-specifications",
