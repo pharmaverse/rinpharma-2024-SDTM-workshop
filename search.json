@@ -18,21 +18,21 @@
     "href": "index.html#objectives",
     "title": "R/Pharma SDTM Workshop",
     "section": "Objectives",
-    "text": "Objectives\n\n\nBy the end of this workshop you will have:\n\nUpdated code for SDTM cm and vs using sdtm.oak.\nGained an understanding of how to use sdtm.oak.\nGained an understanding of how to use resources for building SDTM in R."
+    "text": "Objectives\n\n\nBy the end of this workshop you will have:\n\nUpdated code for SDTM cm, vs, dm, ae using sdtm.oak.\nGained an understanding of how to use sdtm.oak.\nGained an understanding of how to use resources for building SDTM in R."
   },
   {
     "objectID": "index.html#assumptions",
     "href": "index.html#assumptions",
     "title": "R/Pharma SDTM Workshop",
     "section": "Assumptions",
-    "text": "Assumptions\n\n\nBasic knowledge of CDISC Standards (SDTM Domains)\nBasic background in R and its packages\nBasic familiarity with RStudio IDE.\n%&gt;% chaining functions together"
+    "text": "Assumptions\n\n\nBasic knowledge of CDISC Standards (SDTM Domains)\n🦺 But even lacking CDSIC knowledge, we still think you will gain some great learnings today! 🦺\nBasic background in R and its packages\nBasic familiarity with RStudio IDE.\n%&gt;% chaining functions together"
   },
   {
     "objectID": "index.html#agenda",
     "href": "index.html#agenda",
     "title": "R/Pharma SDTM Workshop",
     "section": "Agenda",
-    "text": "Agenda\n\n\n🕙 10 minutes Setup of Workspace\n🕙 10 minutes Introduction to sdtm.oak\n🕥 30 minutes CM domain programming\n🕚 10 minutes Break\n🕦 30 minutes VS domain programming\n🕦 10 minutes DM domain programming\n🕦 10 minutes AE domain programming"
+    "text": "Agenda\n\n\n🕙 10 minutes Setup of Workspace\n🕙 20 minutes Introduction to sdtm.oak\n🕥 30 minutes CM domain programming\n🕚 10 minutes Break\n🕦 30 minutes VS domain programming\n🕦 10 minutes DM domain programming\n🕦 10 minutes AE domain programming\n🕦 Optional Exercise"
   },
   {
     "objectID": "index.html#who-will-help-you-achieve-the-workshops-objectives",
@@ -172,7 +172,7 @@
     "href": "index.html#how-we-will-code-today",
     "title": "R/Pharma SDTM Workshop",
     "section": "How we will “code” today",
-    "text": "How we will “code” today\n\n\nI will walk you through coding cm, vs, dm, ae domains\n\nDiscussion on each function and function arguments\nOccasional Check-in Poll\n\nImportant to move along quickly\n\nPlease post questions to chat\nFull scripts are available in exercises folder"
+    "text": "How we will “code” today\n\n\nI will walk you through coding cm, vs, dm, ae domains\n\nDiscussion on each function and function arguments\nOccasional Check-in Poll\n\nImportant to move along quickly\n\nPlease post questions to chat\nFull scripts are available in scripts folder"
   },
   {
     "objectID": "index.html#review-specs",
@@ -203,11 +203,32 @@
     "text": "Quiz - 1\nWhat function should be used for mapping for CMROUTE\n\n\n\n\n\n  assign_no_ct() \n\n\n  assign_ct() \n\n\n\n\n\n\n\n\nCorrect answer:\nb) As CMROUTE has a codelist associated we need to use   assign_ct()"
   },
   {
-    "objectID": "index.html#recap-1",
-    "href": "index.html#recap-1",
+    "objectID": "index.html#review-specs-1",
+    "href": "index.html#review-specs-1",
     "title": "R/Pharma SDTM Workshop",
-    "section": "Recap",
-    "text": "Recap\nDid we review the following in the code?\n\nMapping one topic variable and its qualifies at a time\nMapping qualifiers common to all topic variables\nUsage of oak_id_vars"
+    "section": "Review specs",
+    "text": "Review specs\nReview aCRF\n\nVitalSigns_aCRF"
+  },
+  {
+    "objectID": "index.html#code-walkthrough-1",
+    "href": "index.html#code-walkthrough-1",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Code Walkthrough",
+    "text": "Code Walkthrough\nRun the code and explain to the users"
+  },
+  {
+    "objectID": "index.html#review-a-record-vitals-raw-dataset",
+    "href": "index.html#review-a-record-vitals-raw-dataset",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Review a record Vitals Raw dataset",
+    "text": "Review a record Vitals Raw dataset\n\n\n\nPATNUM: 701-1034\nOAK_ID: 213\nINSTANCE: WEEK2\nVTLD: 15-Jul-2014\nTMPTC: after Lying Down for 5 Minutes\nSYS_BP: 183.0\nDIA_BP: 81.0"
+  },
+  {
+    "objectID": "index.html#review-a-record-in-vs",
+    "href": "index.html#review-a-record-in-vs",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Review a record in VS",
+    "text": "Review a record in VS\n\n\n\nUSUBJID: 01-701-1034\nVSTESTCD: SYSBP and DIABP\nVISIT: WEEK2\nVSDTC: 2014-07-15\nVSTPT: AFTER LYING DOWN FOR 5 MINUTES\nVSORRES: 183.0 and 81.0"
   },
   {
     "objectID": "index.html#quiz---2",
@@ -217,18 +238,67 @@
     "text": "Quiz - 2\nWhen to use hardcode mapping algorithm?\n\n\n\n\n\nTo assign a collected value on the eCRF\n\n\nTo Hardcode a SDTM variable that has not directly collected on the eCRF.\n\n\n\n\n\n\n\n\nCorrect answer:\nb) To hardcode a value use hardcode algorithms. To assign a collected value use assign algorithms"
   },
   {
-    "objectID": "index.html#sdtm-specifications",
-    "href": "index.html#sdtm-specifications",
+    "objectID": "index.html#review-specs-2",
+    "href": "index.html#review-specs-2",
     "title": "R/Pharma SDTM Workshop",
-    "section": "sdtm specifications",
-    "text": "sdtm specifications\n\nQuick preview of the sdtm specifications (draft stage)\nShowcase the potential for automation."
+    "section": "Review specs",
+    "text": "Review specs\nReview aCRF\n\nDemographics_aCRF\nExposure_as_collected_aCRF\nSubject_Disposition_aCRF"
   },
   {
-    "objectID": "index.html#roadmap",
-    "href": "index.html#roadmap",
+    "objectID": "index.html#reference-date-derivation",
+    "href": "index.html#reference-date-derivation",
     "title": "R/Pharma SDTM Workshop",
-    "section": "Roadmap",
-    "text": "Roadmap\nWe are planning to develop the below features in the subsequent releases.\n\n\nFunctions required to derive reference date variables in the DM domain. (To be released in May - 2025)\n\nFunctions required to create SUPP domains.(To be released in May - 2025)\n\nMetadata driven automation based on the standardized SDTM specification. (2025-Q4)\n\nFunctions required to program the EPOCH variable.\n\nFunctions to derive standard units and results based on metadata.\n\nCollaboration with CDISC 360i"
+    "section": "Reference date derivation",
+    "text": "Reference date derivation\n\nDM domain has reference date variables like RFSTDTC, RFENDTC, RFICDTC, RFPENDTC.\nUsually the programming logic includes deriving this as a minimum or maximum date from the raw data across multiple eCRFs.\noak_cal_ref_dates function can help users derive these reference dates based on the metadata provided in a configuration file - ref_date_config_df.\nUsers have to prepare this additional metadata file to derive reference dates."
+  },
+  {
+    "objectID": "index.html#reference-date-configuration-file",
+    "href": "index.html#reference-date-configuration-file",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Reference date configuration file",
+    "text": "Reference date configuration file\n\nAn intuitive way to let   sdtm.oak  know where to look for the reference dates.\nMultiple eCRFs or raw datasets and variables can be specified to derive a specific reference date. The columns in the file are\nraw_dataset_name : Name of the raw dataset.\ndate_var : Date variable name from the raw dataset.\ntime_var : Time variable name from the raw dataset.\ndformat : Format of the date collected in raw data.\ntformat: Format of the time collected in raw data.\nsdtm_var_name : Reference variable name."
+  },
+  {
+    "objectID": "index.html#code-walkthrough-2",
+    "href": "index.html#code-walkthrough-2",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Code Walkthrough",
+    "text": "Code Walkthrough\nRun the code and explain to the users"
+  },
+  {
+    "objectID": "index.html#review-a-record-in-raw-dataset",
+    "href": "index.html#review-a-record-in-raw-dataset",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Review a record in Raw dataset",
+    "text": "Review a record in Raw dataset\n\n\n\nPATNUM: 701-1034\nOAK_ID: 5\nIT.AGE: 77\nIT.SEX: Female"
+  },
+  {
+    "objectID": "index.html#review-a-record-in-dm",
+    "href": "index.html#review-a-record-in-dm",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Review a record in DM",
+    "text": "Review a record in DM\n\n\n\nUSUBJID: 01-701-1034\nAGE: 77\nSEX: FEMALE"
+  },
+  {
+    "objectID": "index.html#pharmaverse-examples",
+    "href": "index.html#pharmaverse-examples",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Pharmaverse Examples",
+    "text": "Pharmaverse Examples\n\n\nReview the AE from Pharmaverse Examples\nCopy and execute the code snippets"
+  },
+  {
+    "objectID": "index.html#check-in-exercise",
+    "href": "index.html#check-in-exercise",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Check-in Exercise",
+    "text": "Check-in Exercise\nOpen exercises/sdtm_exercises.R\n\nlibrary(sdtm.oak)\nlibrary(pharmaverseraw)\nlibrary(dplyr)\n\n#AE aCRF - https://github.com/pharmaverse/pharmaverseraw/blob/main/vignettes/articles/aCRFs/AdverseEvent_aCRF.pdf\n\n# Exercise 1: Map AETERM from raw_var=IT.AETERM, tgt_var=AETERM\n\n# Exercise 2:  Map AESER from raw_var=IT.AESER, tgt_var=AESER. Codelist code for AESDTH is C66742\n\n# Exercise 3:  Map AESDTH from raw_var=IT.AESDTH, tgt_var=AESDTH.Annotation text is \n#    If \"Yes\" then AESDTH = \"Y\" else Not Submitted. Codelist code for AESDTH is C66742\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "index.html#exercise-solution",
+    "href": "index.html#exercise-solution",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "Exercise Solution",
+    "text": "Exercise Solution\n\nae &lt;-\n  # Derive topic variable\n  # Map AETERM using assign_no_ct, raw_var=IT.AETERM, tgt_var=AETERM\n  assign_no_ct(\n    raw_dat = ae_raw,\n    raw_var = \"IT.AETERM\",\n    tgt_var = \"AETERM\",\n    id_vars = oak_id_vars()\n  ) %&gt;%\n  # Map AESER using assign_no_ct, raw_var=IT.AESER, tgt_var=AESER\n  assign_ct(\n    raw_dat = ae_raw,\n    raw_var = \"IT.AESER\",\n    tgt_var = \"AESER\",\n    ct_spec = study_ct,\n    ct_clst = \"C66742\",\n    id_vars = oak_id_vars()\n  ) %&gt;%\n  # Map AESDTH using condition_add & assign_ct, raw_var=IT.AESDTH, tgt_var=AESDTH\n  assign_ct(\n    raw_dat = condition_add(ae_raw, IT.AESDTH == \"Yes\"),\n    raw_var = \"IT.AESDTH\",\n    tgt_var = \"AESDTH\",\n    ct_spec = study_ct,\n    ct_clst = \"C66742\",\n    id_vars = oak_id_vars()\n  )"
   },
   {
     "objectID": "index.html#get-involved",
@@ -242,7 +312,7 @@
     "href": "index.html#learning-resources",
     "title": "R/Pharma SDTM Workshop",
     "section": "Learning Resources",
-    "text": "Learning Resources\nsdtm.oak Documentation\nsdtm.oak Youtube Video\nsdtm.oak Pharmaverse Blog\nSDTM Programming in R with sdtm.oak"
+    "text": "Learning Resources\nsdtm.oak Documentation\nPharmaverse Examples\nsdtm.oak Youtube Video\nsdtm.oak Pharmaverse Blog\nSDTM Programming in R with sdtm.oak Poster"
   },
   {
     "objectID": "index.html#thank-you",
