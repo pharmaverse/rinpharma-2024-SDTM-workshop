@@ -16,7 +16,7 @@ library(dplyr)
 
 # Read Specification ----
 
-study_ct <- read.csv("slides/02-SDTM/metadata/sdtm_ct.csv")
+study_ct <- read.csv("./datasets/sdtm_ct.csv")
 
 # Read in raw data & create oak_id_vars ----
 
