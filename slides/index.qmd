@@ -349,6 +349,8 @@ What function should be used for mapping for CMROUTE
 > >
 > >     b)  sdtm.oak::assign_ct()
 
+## Quiz - 1 Answer
+
 > -   Correct answer:
 > -   **b) As CMROUTE has a codelist associated we need to use
 >     sdtm.oak::assign_ct()**
@@ -410,6 +412,8 @@ When to use hardcode mapping algorithm?
 > >
 > >     b)  To Hardcode a SDTM variable that has not directly collected
 > >         on the eCRF.
+
+## Quiz - 2 Answer
 
 > -   Correct answer:
 > -   **b) To hardcode a value use hardcode algorithms. To assign a
