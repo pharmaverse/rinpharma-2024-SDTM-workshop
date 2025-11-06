@@ -200,11 +200,13 @@ Rammprasad Ganapathy (Roche/Genentench)
 <h2>Agenda</h2>
 <div>
 <ul>
-<li class="fragment"><p>🕙 15 minutes Setup of Workspace</p></li>
-<li class="fragment"><p>🕙 15 minutes Introduction to <code>sdtm.oak</code></p></li>
-<li class="fragment"><p>🕥 40 minutes <code>CM</code> domain programming</p></li>
+<li class="fragment"><p>🕙 10 minutes Setup of Workspace</p></li>
+<li class="fragment"><p>🕙 10 minutes Introduction to <code>sdtm.oak</code></p></li>
+<li class="fragment"><p>🕥 30 minutes <code>CM</code> domain programming</p></li>
 <li class="fragment"><p>🕚 10 minutes Break</p></li>
-<li class="fragment"><p>🕦 40 minutes <code>VS</code> domain programming</p></li>
+<li class="fragment"><p>🕦 30 minutes <code>VS</code> domain programming</p></li>
+<li class="fragment"><p>🕦 10 minutes <code>DM</code> domain programming</p></li>
+<li class="fragment"><p>🕦 10 minutes <code>AE</code> domain programming</p></li>
 </ul>
 </div>
 </section></section>
@@ -241,7 +243,7 @@ Rammprasad Ganapathy (Roche/Genentench)
 </ul></li>
 <li class="fragment"><strong>Quick and Dirty</strong>
 <ul>
-<li class="fragment">Grab files from <a href="https://github.com/pharmaverse/rinpharma-2024-SDTM-workshop">Repo</a></li>
+<li class="fragment">Grab files from <a href="https://github.com/pharmaverse/rinpharma-SDTM-workshop">Repo</a></li>
 <li class="fragment">Files are in <code>exercises</code>, <code>datasets</code> and <code>specs</code> folders</li>
 </ul></li>
 <li class="fragment"><strong>Advanced:</strong>
@@ -281,11 +283,11 @@ Rammprasad Ganapathy (Roche/Genentench)
 </ul>
 </div>
 </section>
-<section id="sdtm.oak-v0.1.1" class="slide level2 smaller">
-<h2><code>sdtm.oak</code> v0.1.1</h2>
+<section id="sdtm.oak-v0.2" class="slide level2 smaller">
+<h2><code>sdtm.oak</code> v0.2</h2>
 <div>
 <ul>
-<li class="fragment">v0.1.1 is avaiable on CRAN.</li>
+<li class="fragment">v0.2 is avaiable on CRAN.</li>
 <li class="fragment"><strong>EDC agnostic</strong> <code>sdtm.oak</code> is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors.</li>
 <li class="fragment"><strong>Data standards agnostic</strong> It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.</li>
 <li class="fragment">Provides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem.</li>
@@ -452,6 +454,30 @@ Rammprasad Ganapathy (Roche/Genentench)
 </tr>
 </tbody>
 </table>
+</section>
+<section id="oak_cal_ref_dates" class="slide level2 smaller">
+<h2>oak_cal_ref_dates</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 40%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Algorithm or Function</th>
+<th>Description of the Algorithm</th>
+<th>Example SDTM mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()"> <template>Calculate Reference dates in ISO8601 character format. — oak_cal_ref_dates • sdtm.oak</template> <a href="https://pharmaverse.github.io/sdtm.oak/reference/oak_cal_ref_dates.html" class="r-link-call" target="_blank"><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">   <template>Calculate Reference dates in ISO8601 character format. — oak_cal_ref_dates • sdtm.oak</template>   </bslib-tooltip></a><a href="https://pharmaverse.github.io/sdtm.oak/reference/oak_cal_ref_dates.html" class="r-link-call" target="_blank">oak_cal_ref_dates()</a> </bslib-tooltip> </td>
+<td>Derivation of Reference dates in the DM domain</td>
+<td>DM.RFSTDTC <br><br> DM.RFPENDTC</td>
+</tr>
+</tbody>
+</table>
 <style>
 .centered-image {
   display: block;
@@ -538,7 +564,7 @@ Rammprasad Ganapathy (Roche/Genentench)
 <h2>How we will “code” today</h2>
 <div>
 <ul>
-<li class="fragment">I will walk you through coding <code>cm</code> and <code>vs</code>
+<li class="fragment">I will walk you through coding <code>cm</code>, <code>vs</code>, <code>dm</code>, <code>ae</code> domains
 <ul>
 <li class="fragment">Discussion on each function and function arguments</li>
 <li class="fragment">Occasional Check-in Poll</li>

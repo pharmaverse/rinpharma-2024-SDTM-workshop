@@ -32,7 +32,7 @@
     "href": "index.html#agenda",
     "title": "R/Pharma SDTM Workshop",
     "section": "Agenda",
-    "text": "Agenda\n\n\n🕙 15 minutes Setup of Workspace\n🕙 15 minutes Introduction to sdtm.oak\n🕥 40 minutes CM domain programming\n🕚 10 minutes Break\n🕦 40 minutes VS domain programming"
+    "text": "Agenda\n\n\n🕙 10 minutes Setup of Workspace\n🕙 10 minutes Introduction to sdtm.oak\n🕥 30 minutes CM domain programming\n🕚 10 minutes Break\n🕦 30 minutes VS domain programming\n🕦 10 minutes DM domain programming\n🕦 10 minutes AE domain programming"
   },
   {
     "objectID": "index.html#who-will-help-you-achieve-the-workshops-objectives",
@@ -63,11 +63,11 @@
     "text": "Challenges in SDTM Programming\n\n\nAlthough SDTM is simpler with less complex derivations compared to ADaM, it presents unique challenges. Unlike ADaM, which uses SDTM datasets as its source with a well-defined structure, SDTM relies on raw datasets as input.\nRaw Data structure - Different EDC systems produce data in different structures, different variable names, dataset names etc.\nVarying Data Collection standards - Although CDASH is available, the companies can still develop varying eCRFs using CDASH standards."
   },
   {
-    "objectID": "index.html#sdtm.oak-v0.1.1",
-    "href": "index.html#sdtm.oak-v0.1.1",
+    "objectID": "index.html#sdtm.oak-v0.2",
+    "href": "index.html#sdtm.oak-v0.2",
     "title": "R/Pharma SDTM Workshop",
-    "section": "sdtm.oak v0.1.1",
-    "text": "sdtm.oak v0.1.1\n\n\nv0.1.1 is avaiable on CRAN.\nEDC agnostic sdtm.oak is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors.\nData standards agnostic It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.\nProvides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem."
+    "section": "sdtm.oak v0.2",
+    "text": "sdtm.oak v0.2\n\n\nv0.2 is avaiable on CRAN.\nEDC agnostic sdtm.oak is designed to be highly versatile, accommodating varying raw data structures from different EDC systems and external vendors.\nData standards agnostic It supports both CDISC-defined data collection standards (CDASH) and various proprietary data collection standards defined by pharmaceutical companies.\nProvides a framework for modular programming, making it a valuable addition to the pharmaverse ecosystem."
   },
   {
     "objectID": "index.html#key-concepts",
@@ -119,6 +119,13 @@
     "text": "condition_add\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        condition_add()  \nAlgorithm that is used to filter the source data and/or target domain based on a condition. The mapping will be applied only if the condition is met. This algorithm has to be used in conjunction with other algorithms, that is if the condition is met perform the mapping using algorithms like assign_ct, assign_no_ct, hardcode_ct, hardcode_no_ct, assign_datetime.\nIf MDPRIOR == 1 then CM.CMSTRTPT = ‘BEFORE’. VS.VSMETHOD when VSTESTCD = ‘TEMP’"
   },
   {
+    "objectID": "index.html#oak_cal_ref_dates",
+    "href": "index.html#oak_cal_ref_dates",
+    "title": "R/Pharma SDTM Workshop",
+    "section": "oak_cal_ref_dates",
+    "text": "oak_cal_ref_dates\n\n\n\n\n\n\n\n\nAlgorithm or Function\nDescription of the Algorithm\nExample SDTM mapping\n\n\n\n\n        oak_cal_ref_dates()  \nDerivation of Reference dates in the DM domain\nDM.RFSTDTC  DM.RFPENDTC"
+  },
+  {
     "objectID": "index.html#reusable-algorithms",
     "href": "index.html#reusable-algorithms",
     "title": "R/Pharma SDTM Workshop",
@@ -165,7 +172,7 @@
     "href": "index.html#how-we-will-code-today",
     "title": "R/Pharma SDTM Workshop",
     "section": "How we will “code” today",
-    "text": "How we will “code” today\n\n\nI will walk you through coding cm and vs\n\nDiscussion on each function and function arguments\nOccasional Check-in Poll\n\nImportant to move along quickly\n\nPlease post questions to chat\nFull scripts are available in exercises folder"
+    "text": "How we will “code” today\n\n\nI will walk you through coding cm, vs, dm, ae domains\n\nDiscussion on each function and function arguments\nOccasional Check-in Poll\n\nImportant to move along quickly\n\nPlease post questions to chat\nFull scripts are available in exercises folder"
   },
   {
     "objectID": "index.html#review-specs",
