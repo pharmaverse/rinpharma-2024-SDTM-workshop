@@ -83,15 +83,19 @@ img_center_size <- 300
 
 ::: incremental
 
--   🕙 15 minutes Setup of Workspace
+-   🕙 10 minutes Setup of Workspace
 
--   🕙 15 minutes Introduction to `sdtm.oak`
+-   🕙 10 minutes Introduction to `sdtm.oak`
 
--   🕥 40 minutes `CM` domain programming
+-   🕥 30 minutes `CM` domain programming
 
 -   🕚 10 minutes Break
 
--   🕦 40 minutes `VS` domain programming
+-   🕦 30 minutes `VS` domain programming
+
+-   🕦 10 minutes `DM` domain programming
+
+-   🕦 10 minutes `AE` domain programming
 :::
 
 # Setup of Workspace
@@ -113,7 +117,7 @@ img_center_size <- 300
         -   Everything loaded (data, packages, specs) and ready to go!
 -   **Quick and Dirty**
     -   Grab files from
-        [Repo](https://github.com/pharmaverse/rinpharma-2024-SDTM-workshop)
+        [Repo](https://github.com/pharmaverse/rinpharma-SDTM-workshop)
     -   Files are in `exercises`, `datasets` and `specs` folders
 -   **Advanced:**
     -   Clone
@@ -151,10 +155,10 @@ img_center_size <- 300
     the companies can still develop varying eCRFs using CDASH standards.
 :::
 
-## `sdtm.oak` v0.1.1 {.smaller}
+## `sdtm.oak` v0.2 {.smaller}
 
 ::: incremental
--   v0.1.1 is avaiable on CRAN.
+-   v0.2 is avaiable on CRAN.
 -   **EDC agnostic** `sdtm.oak` is designed to be highly versatile,
     accommodating varying raw data structures from different EDC systems
     and external vendors.
@@ -214,6 +218,12 @@ img_center_size <- 300
 | Algorithm or Function                          | Description of the Algorithm                                                                                                                                                                                                                                                                                                                                               | Example SDTM mapping                                                                    |
 |---------------------|-----------------------------|----------------------|
 | `r link::to_call("sdtm.oak::condition_add()")` | Algorithm that is used to filter the source data and/or target domain based on a condition. The mapping will be applied only if the condition is met. This algorithm has to be used in conjunction with other algorithms, that is if the condition is met perform the mapping using algorithms like assign_ct, assign_no_ct, hardcode_ct, hardcode_no_ct, assign_datetime. | If MDPRIOR == 1 then CM.CMSTRTPT = ‘BEFORE’. <br><br>VS.VSMETHOD when VSTESTCD = ‘TEMP’ |
+
+## oak_cal_ref_dates {.smaller}
+
+| Algorithm or Function                           | Description of the Algorithm                                                              | Example SDTM mapping                                  |
+|---------------------|-----------------------------|----------------------|
+| `r link::to_call("sdtm.oak::oak_cal_ref_dates()")` | Derivation of Reference dates in the DM domain | DM.RFSTDTC <br><br> DM.RFPENDTC |
 
 ```{=html}
 <style>
@@ -295,7 +305,7 @@ img_center_size <- 300
 ## How we will "code" today
 
 ::: incremental
--   I will walk you through coding `cm` and `vs`
+-   I will walk you through coding `cm`, `vs`, `dm`, `ae` domains
     -   Discussion on each function and function arguments
     -   Occasional Check-in Poll
 -   Important to move along quickly
