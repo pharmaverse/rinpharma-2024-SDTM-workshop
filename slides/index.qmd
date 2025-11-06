@@ -2,7 +2,7 @@
 title: "R/Pharma SDTM Workshop"
 author:
   - Rammprasad Ganapathy (Roche/Genentench)
-date: 2025-04-29
+date: 2025-11-05
 date-format: full
 format:
   revealjs:
