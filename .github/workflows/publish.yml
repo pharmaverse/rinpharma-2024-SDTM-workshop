@@ -30,7 +30,7 @@ jobs:
         shell: bash
 
       - name: Install R dependencies
-        run: install.packages(c("link", "glue", "dplyr", "sdtm.oak"))
+        run: install.packages(c("link", "glue", "dplyr", "sdtm.oak", "countdown"))
         shell: Rscript {0}
 
       - name: Render Quarto Project
